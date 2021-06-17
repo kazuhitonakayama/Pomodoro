@@ -5,16 +5,14 @@
     <title>TOP</title>
 </head>
 <body>
-    <ul style="list-style: none;">
-        <div align="center" class="circle">
-            <li>ゴルフ部</li>
-
-            <li>麻雀部</li>
-            <li>釣り部</li>
-            <a th:href="@{circles/darts}">ダーツ部</a>
-            <li>ダーツ部</li>
-            <li>餃子部</li>
-        </div>
-    </ul>
+<ul style="list-style: none;">
+    <div align="center" class="circle">
+        <li><a th:href="@{/golf}">ゴルフ部</a></li>
+        <li><a th:href="@{/majan}">麻雀部</a></li>
+        <li><a th:href="@{/fishing}">釣り部</a></li>
+        <li><a th:href="@{/darts}">ダーツ部</a></li>
+        <li><a th:href="@{/gyoza}">餃子部</a></li>
+    </div>
+</ul>
 </body>
 </html>
