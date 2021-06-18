@@ -14,4 +14,31 @@ public class IndexContoroller {
         //index.htmlに画面遷移
         return "index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
+
+    //REVIEW: ページを表示するだけなら、GetMappingで良いと思うが、何かしら値をやり取りするならPostMappingの方が良さそう
+    @GetMapping("/golf")
+    public String getGolfPage() {
+        return "/circles/golf";
+    }
+
+    @GetMapping("/majan")
+    public String getMajanPage() {
+        return "/circles/majan";
+    }
+
+    @GetMapping("/fishing")
+    public String getFishingPage() {
+        return "/circles/fishing";
+    }
+
+    @GetMapping("/darts")
+    public String getDartsPage() {
+        return "/circles/darts";
+    }
+
+    @GetMapping("/gyoza")
+    public String getGyozaPage() {
+        return "/circles/gyoza";
+    }
+
 }
