@@ -9,34 +9,34 @@ public class IndexContoroller {
     /**
      * サークル一覧画面を表示
      */
-    @GetMapping("/index") //localhost:8080/helloを指定
+    @GetMapping("/index") //localhost:8080/indexを指定
     public String getIndex() {
         //index.htmlに画面遷移
         return "index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
     //REVIEW: ページを表示するだけなら、GetMappingで良いと思うが、何かしら値をやり取りするならPostMappingの方が良さそう
-    @GetMapping("/golf")
+    @GetMapping("/circles/golf")
     public String getGolfPage() {
         return "/circles/golf";
     }
 
-    @GetMapping("/majan")
+    @GetMapping("/circles/majan")
     public String getMajanPage() {
         return "/circles/majan";
     }
 
-    @GetMapping("/fishing")
+    @GetMapping("/circles/fishing")
     public String getFishingPage() {
         return "/circles/fishing";
     }
 
-    @GetMapping("/darts")
+    @GetMapping("/circles/darts")
     public String getDartsPage() {
         return "/circles/darts";
     }
 
-    @GetMapping("/gyoza")
+    @GetMapping("/circles/gyoza")
     public String getGyozaPage() {
         return "/circles/gyoza";
     }
