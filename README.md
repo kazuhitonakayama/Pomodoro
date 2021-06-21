@@ -16,8 +16,8 @@ https://www.figma.com/proto/tNhlOh3qKlPWdLxbH6TVHH/Untitled?page-id=0%3A1&node-i
 
 ## How to build  
 ```
-mvn package
-mvn install
+./mvnw clean
+./mvnw package
 ```
 refer https://spring.pleiades.io/guides/gs/maven/
 
