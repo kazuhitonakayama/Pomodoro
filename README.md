@@ -14,7 +14,7 @@ Design Management Tool: Figma
 
 https://www.figma.com/proto/tNhlOh3qKlPWdLxbH6TVHH/Untitled?page-id=0%3A1&node-id=1%3A2&viewport=941%2C278%2C0.581944465637207&scaling=min-zoom
 
-## How to build  
+## How to build   
 ```
 ./mvnw clean
 ./mvnw package
@@ -30,6 +30,7 @@ These files are transpile to pure css files in `src/main/resources/static/css`.
 For compile ,please run command below.
 
 ```
+./mvnw generate-resources
 yarn run scss
 ```
 To shotdown compile server, please execute `Ctrl + C`
