@@ -163,5 +163,8 @@ $RECYCLE.BIN/
 # node_modules
 *node_modules
 
+# Sass
+/src/main/resources/static/css
+
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,windows

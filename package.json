@@ -1,6 +1,10 @@
 {
     "dependencies": {},
     "devDependencies": {
-      "eslint": "^6.5.1"
+        "eslint": "^6.5.1",
+        "sass": "^1.35.1"
+    },
+    "scripts": {
+        "scss": "sass src/main/resources/assets/stylesheets:src/main/resources/static/css --watch"
     }
 }
