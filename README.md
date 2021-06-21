@@ -21,6 +21,18 @@ mvn install
 ```
 refer https://spring.pleiades.io/guides/gs/maven/
 
+
+## About managing style(CSS)  
+Using sass(Dart-sass) in order to write css more simply and easily.
+scss files are present in `src/main/resources/assets/stylesheets`.
+These files are transpile to pure css files in `src/main/resources/static/css`.
+For compile ,please run command below.
+
+```
+yarn run scss
+```
+To shotdown compile server, please execute `Ctrl + C`
+
 ## Collaborator
 [furudeK](https://github.com/furudeK)
 
