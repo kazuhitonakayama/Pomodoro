@@ -18,6 +18,7 @@ https://www.figma.com/proto/tNhlOh3qKlPWdLxbH6TVHH/Untitled?page-id=0%3A1&node-i
 ```
 ./mvnw clean
 ./mvnw package
+./mvnw spring-boot:run
 ```
 refer https://spring.pleiades.io/guides/gs/maven/
 
