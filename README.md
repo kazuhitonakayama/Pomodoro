@@ -30,6 +30,8 @@ These files are transpile to pure css files in `src/main/resources/static/css`.
 For compile ,please run command below.
 
 ```
+# If you have not installed 'yarn' ever, you need to install yarn
+brew install yarn
 ./mvnw generate-resources     #if you already run `./mvnw spring-boot:run`, you don't have to run this command
 yarn run scss
 ```
