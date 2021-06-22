@@ -160,11 +160,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Mac
+*.DS_Store
+
+#InteliJ
+*.idea
+
 # node_modules
 *node_modules
-
-# Sass
-/src/main/resources/static/css
-
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,windows
