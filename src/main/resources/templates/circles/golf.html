@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Golf Circle</title>
+<head th:replace="common :: meta_header('ゴルフ部',~{::link},~{::script})">
 </head>
 <body>
+    <!--Install header from common.html-->
+    <div th:replace="common :: header"></div>
+    <!--end-->
     <h1>Welcome to Golf Circle Page!!</h1>
+    <!--Install bootstrapjs from common.html-->
+    <div th:replace="common :: popperjs"></div>
+    <div th:replace="common :: bootstrapjs"></div>
+    <!--end-->
 </body>
 </html>
