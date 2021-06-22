@@ -166,4 +166,7 @@ $RECYCLE.BIN/
 #InteliJ
 *.idea
 
+# node_modules
+*node_modules
+
 # End of https://www.gitignore.io/api/git,java,maven,eclipse,windows
