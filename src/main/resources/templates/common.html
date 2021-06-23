@@ -18,7 +18,7 @@
     <th:block th:replace="${links} ?: _" />
     <th:block th:replace="${scripts} ?: _" />
 </head>
-<body class="relative">
+<body>
     <!-- (5)body内で共通化したい部品をfragment化する -->
     <nav th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
