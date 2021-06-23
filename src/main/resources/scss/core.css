@@ -1,9 +1,6 @@
-body .card {
+.card {
   min-width: 220px;
   max-width: 270px;
-  margin-bottom: 30px;
-}
-
-/*# sourceMappingURL=core.css.map */
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=core.css.map */
