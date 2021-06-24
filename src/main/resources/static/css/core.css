@@ -23,4 +23,17 @@
   text-align: right;
 }
 
+.col .card {
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  padding-top: 32px;
+}
+
+.row-cols-4 > * {
+  margin-bottom: 16px;
+}
+
 /*# sourceMappingURL=core.css.map */
