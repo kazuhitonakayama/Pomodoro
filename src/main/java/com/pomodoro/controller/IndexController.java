@@ -1,11 +1,11 @@
-package com.pomodoro.circles;
+package com.pomodoro.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 //画面などからHTTPリクエストを受け付けるクラス
 @Controller
-public class IndexContoroller {
+public class IndexController {
     /**
      * サークル一覧画面を表示
      */
