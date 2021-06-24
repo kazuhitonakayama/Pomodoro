@@ -1,9 +1,26 @@
-body .card {
-  min-width: 220px;
-  max-width: 270px;
-  margin-bottom: 30px;
+.card {
+  margin-bottom: 10px;
 }
 
-/*# sourceMappingURL=core.css.map */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card-title {
+  text-decoration: underline;
+}
+
+.card-footer a {
+  color: gray;
+}
+
+.right {
+  text-align: right;
+}
 
 /*# sourceMappingURL=core.css.map */

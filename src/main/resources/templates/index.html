@@ -10,80 +10,86 @@
 <!--end-->
 
 <!-- 以下、各部活のトピックをBootstrapのcard-deckで表示  -->
+<!-- FIXME card-deckの表示がうまくいかない -->
+<!-- FIXME 画像の表示がうまくいかない、thymeleafが関係している？-->
+
 <div class="card-deck" style="width:18rem">
-    <div class="col-sm-6">
-    <a th:href="@{/circles/golf}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./images/cat.jpg" alt="画像表示ができない">
-            <div class="card-body">
-                <h4 class="card-title">ゴルフコンペ開催</h4>
-                <p class="card-text">ゴルフコンペを開催しました！楽しかった。</p>
+    <div class="col-sm-12">
+        <a th:href="@{/circles/golf}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./images/cat.jpg" alt="画像表示ができない">
+                <div class="card-body">
+                    <h4 class="card-title">ゴルフコンペ開催</h4>
+                    <p class="card-text">ゴルフコンペを開催しました！楽しかった。</p>
+                </div>
+                <div class="card-footer right">
+                    <a href="#" class="card-link">#ゴルフ部</a>
+                </div>
             </div>
-            <div class="card-footer">
-                <a href="#" class="card-link">#ゴルフ部</a>
-            </div>
-        </div>
-    </a>
+        </a>
 
-    <a th:href="@{/circles/majan}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./images/cat2.png" th:src="@{/images/cat2.png}" alt="画像表示ができない">
-            <div class="card-body">
-                <h4 class="card-title">麻雀部新人歓迎会開催</h4>
-                <p class="card-text">新しく入部した人がいるので、麻雀部で新人歓迎会を開催します！</p>
-            </div>
+        <a th:href="@{/circles/majan}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./images/cat.jpg"  th:src="@{/images/cat2.png}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h4 class="card-title">麻雀部新人歓迎会開催</h4>
+                    <p class="card-text">新しく入部した人がいるので、麻雀部で新人歓迎会を開催します！</p>
+                </div>
 
-            <div class="card-footer">
-                <a href="#" class="card-link">#麻雀部</a>
+                <div class="card-footer right">
+                    <a href="#" class="card-link">#麻雀部</a>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <a th:href="@{/circles/fishing}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./images/cat2.png" th:src="@{/images/cat2.png}" alt="画像表示ができない">
-            <div class="card-body">
-                <h4 class="card-title">大物が釣れました</h4>
-                <p class="card-text">釣りめっちゃたのしいいいい</p>
-            </div>
+        <a th:href="@{/circles/fishing}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./images/cat.jpg"  th:src="@{/images/cat2.png}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h4 class="card-title">大物が釣れました</h4>
+                    <p class="card-text">釣りめっちゃたのしいいいい</p>
+                </div>
 
-            <div class="card-footer">
-                <a href="#" class="card-link">#釣り部</a>
+                <div class="card-footer right">
+                    <a href="#" class="card-link">#釣り部</a>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <a th:href="@{/circles/darts}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./images/cat2.png" th:src="@{/images/cat2.png}" alt="画像表示ができない">
-            <div class="card-body">
-                <h4 class="card-title">Aフライトになりました</h4>
-                <p class="card-text">Aフラまでの道のをここに記す。</p>
-            </div>
+        <a th:href="@{/circles/darts}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./images/cat.jpg"  th:src="@{/images/cat2.png}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h4 class="card-title">Aフライトになりました</h4>
+                    <p class="card-text">Aフラまでの道のをここに記す。</p>
+                </div>
 
-            <div class="card-footer">
-                <a href="#" class="card-link">#ダーツ部</a>
+                <div class="card-footer right">
+                    <a href="#" class="card-link">#ダーツ部</a>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <a th:href="@{/circles/gyoza}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./images/cat2.png" th:src="@{/images/cat2.png}" alt="画像表示ができない">
-            <div class="card-body">
-                <h4 class="card-title">餃子消費量について</h4>
-                <p class="card-text">静岡県浜松市vs栃木県宇都宮市。どちらが餃子の街なのか調査しました。</p>
-            </div>
+        <a th:href="@{/circles/gyoza}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./images/cat.jpg"  th:src="@{/images/cat2.png}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h4 class="card-title">餃子消費量について</h4>
+                    <p class="card-text">静岡県浜松市vs栃木県宇都宮市。どちらが餃子の街なのか調査しました。</p>
+                </div>
 
-            <div class="card-footer">
-                <a href="#" class="card-link">#餃子部</a>
+                <div class="card-footer right">
+                    <a href="#" class="card-link">#餃子部</a>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
-</div>
 
 
+<!--Install footer from common.html-->
+<div th:replace="common :: footer"></div>
+<!--end-->
 
 <!--Install bootstrapjs from common.html-->
 <div th:replace="common :: popperjs"></div>
