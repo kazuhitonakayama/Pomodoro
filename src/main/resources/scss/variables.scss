@@ -1,0 +1,39 @@
+// カラー変数
+
+// ブレイクポイントの設定
+// 画面幅が950px以下
+$breakpoint-under950: 950px;
+// 画面幅が576px以下
+$breakpoint-under576: 576px;
+// 画面幅が480px以下
+$breakpoint-under480: 480px;
+// 画面幅が450px以下
+$breakpoint-under450: 450px;
+
+// 画面幅が950px以下の時に利用するmixin
+@mixin under-950($breakpoint-under950) {
+  @media screen and (max-width: $breakpoint-under950) {
+    @content;
+  }
+}
+
+// 画面幅が576px以下の時に利用するmixin
+@mixin under-576($breakpoint-under576) {
+    @media screen and (max-width: $breakpoint-under576) {
+      @content;
+    }
+  }
+
+// 画面幅が480px以下の時に利用するmixin
+@mixin under-480($breakpoint-under480) {
+  @media screen and (max-width: $breakpoint-under480) {
+    @content;
+  }
+}
+
+// 画面幅が450px以下の時に利用するmixin
+@mixin sp($breakpoint-under450) {
+  @media screen and (max-width: $breakpoint-under450) {
+    @content;
+  }
+}

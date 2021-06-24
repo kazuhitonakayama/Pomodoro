@@ -1,39 +1,13 @@
 .card {
+  min-width: 220px;
+  max-width: 270px;
   margin-bottom: 10px;
 }
 
-.card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-.card-title {
-  text-decoration: underline;
-}
-
-.card-footer a {
-  color: gray;
-}
-
-.right {
+.card-link p.right {
   text-align: right;
 }
 
-.col-md-3 .card {
-  width: 80%;
-  margin: 0 auto 0 auto;
-}
-
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-  padding-top: 32px;
-}
-
-.row-cols-4 > * {
-  margin-bottom: 16px;
-}
+/*# sourceMappingURL=core.css.map */
 
 /*# sourceMappingURL=core.css.map */
