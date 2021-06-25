@@ -41,4 +41,9 @@ public class IndexContoroller {
         return "/circles/gyoza";
     }
 
+    @GetMapping("/circles/new")
+    public String getNewPostPage() {
+        return "/circles/new";
+    }
+
 }
