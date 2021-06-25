@@ -50,13 +50,17 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <div class="d-flex">
+              <button class="btn newpost">新規投稿</button>
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </div>
           </div>
         </div>
     </nav>
+    <span th:fragment="btn_to_newpost" class="btn_to_newpost">
+      <span class="arrow toward_top"></span>
+    </span>
     <!-- footer -->
     <footer th:fragment="footer" class="bg-light fixed-bottom">
       <div class="text-center p-2">
