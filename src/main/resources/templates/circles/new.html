@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: meta_header('サークル一覧',~{::link},~{::script})">
+    <!-- (2)このページ固有で読み込むCSS/JS -->
+</head>
+<body>
+    <!--Install header from common.html-->
+    <div th:replace="common :: header"></div>
+    <!--end-->
+
+    <div class="container">
+        <form>
+            <div class="mb-3">
+            <label for="InputTitle" class="form-label">タイトル</label>
+            <input type="text" class="form-control" id="InputTitle">
+            </div>
+            <div class="mb-3">
+            <label for="InputActivity" class="form-label">活動内容</label>
+            <textarea type="text" class="form-control" id="InputActivity"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">投稿する</button>
+        </form>
+    </div>
+
+
+    <!--Install footer from common.html-->
+    <div th:replace="common :: footer"></div>
+    <!--end-->
+
+    <!--Install bootstrapjs from common.html-->
+    <div th:replace="common :: popperjs"></div>
+    <div th:replace="common :: bootstrapjs"></div>
+    <!--end-->
+</body>
+</html>
