@@ -1,0 +1,53 @@
+.btn {
+  width: 116px;
+  background: #5f9ea0;
+  color: #fff;
+}
+
+.btn.newpost {
+  margin: 0 6px 0 6px;
+}
+
+.btn_to_newpost {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  background: #5f9ea0;
+  height: 60px;
+  width: 60px;
+  display: block;
+  border-radius: 50%;
+}
+@media screen and (max-width: 950px) {
+  .btn_to_newpost {
+    right: 40px;
+  }
+}
+
+span.btn_to_newpost::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 25px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  border-radius: 5px;
+}
+
+span.btn_to_newpost::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 25px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=btn.css.map */

@@ -15,8 +15,16 @@ body {
 }
 
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-  padding: 32px 0 32px 0;
-  @include under-576($breakpoint-under576) {
-    padding: 32px 8px 32px 8px;
-  }
+    padding: 76px 0 32px 0;
+    position: relative;
+    @include under-576($breakpoint-under576) {
+        padding: 32px 8px 32px 8px;
+    }
+}
+
+// Header
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }

@@ -15,7 +15,6 @@ public class IndexController {
         return "index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
-    //REVIEW: ページを表示するだけなら、GetMappingで良いと思うが、何かしら値をやり取りするならPostMappingの方が良さそう
     @GetMapping("/circles/golf")
     public String getGolfPage() {
         return "/circles/golf";
@@ -39,6 +38,11 @@ public class IndexController {
     @GetMapping("/circles/gyoza")
     public String getGyozaPage() {
         return "/circles/gyoza";
+    }
+
+    @GetMapping("/circles/new")
+    public String getNewPostPage() {
+        return "/circles/new";
     }
 
 }
