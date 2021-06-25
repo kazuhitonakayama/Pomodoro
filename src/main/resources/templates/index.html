@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common :: meta_header('サークル一覧',~{::link},~{::script})">
     <!-- (2)このページ固有で読み込むCSS/JS -->
-    <link th:href="@{/css/card_style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/components/card_style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/components/btn.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--Install header from common.html-->
@@ -99,12 +100,10 @@
             </div>
         </div>
     </div>
+    <div th:replace="common :: btn_to_newpost"></div>
 </div>
 
-
-<!--Install footer from common.html-->
 <div th:replace="common :: footer"></div>
-<!--end-->
 
 <!--Install bootstrapjs from common.html-->
 <div th:replace="common :: popperjs"></div>
