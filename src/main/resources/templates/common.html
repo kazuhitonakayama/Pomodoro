@@ -13,7 +13,8 @@
     <!--end-->
     <!-- (3)タイトルのフォーマット -->
     <title th:text="${title}"></title>
-
+    <link th:href="@{/css/core.css}" rel="stylesheet" type="text/css">
+    
     <!-- (4)各View固有で読み込むもの -->
     <th:block th:replace="${links} ?: _" />
     <th:block th:replace="${scripts} ?: _" />

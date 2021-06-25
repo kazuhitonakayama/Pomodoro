@@ -1,24 +1,21 @@
-@charset "UTF-8";
+@import './variables.scss';
+
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6em;
+    font-size: 1.6em;
 }
-
 /* 以上の設定により1emが10pxになる。計算しやすくなる。基本的にフォントサイズなどはremで指定するのが良い */
+
 .right {
   text-align: right;
 }
 
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-  padding: 32px 0 32px 0;
+    padding: 32px 0 32px 0;
+    @include under-576($breakpoint-under576) {
+        padding: 32px 8px 32px 8px;
+    }
 }
-@media screen and (max-width: 576px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    padding: 32px 8px 32px 8px;
-  }
-}
-
-/*# sourceMappingURL=core.css.map */

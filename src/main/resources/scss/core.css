@@ -1,0 +1,9 @@
+.card {
+  min-width: 220px;
+  max-width: 270px;
+  margin-bottom: 10px; }
+
+.card-link p.right {
+  text-align: right; }
+
+/*# sourceMappingURL=core.css.map */

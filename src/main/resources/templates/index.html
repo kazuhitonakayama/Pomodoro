@@ -2,30 +2,113 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common :: meta_header('サークル一覧',~{::link},~{::script})">
     <!-- (2)このページ固有で読み込むCSS/JS -->
-    <link th:href="@{/css/core.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/card_style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <!--Install header from common.html-->
-    <div th:replace="common :: header"></div>
-    <!--end-->
-    
-    <ul style="list-style: none;">
-        <div align="center" class="circle">
-            <li><a th:href="@{/circles/golf}">ゴルフ部</a></li>
-            <li><a th:href="@{/circles/majan}">麻雀部</a></li>
-            <li><a th:href="@{/circles/fishing}">釣り部</a></li>
-            <li><a th:href="@{/circles/darts}">ダーツ部</a></li>
-            <li><a th:href="@{/circles/gyoza}">餃子部</a></li>
-        </div>
-    </ul>
+<!--Install header from common.html-->
+<div th:replace="common :: header"></div>
+<!--end-->
 
-    <!--Install footer from common.html-->
-    <div th:replace="common :: footer"></div>
-    <!--end-->
-    
-    <!--Install bootstrapjs from common.html-->
-    <div th:replace="common :: popperjs"></div>
-    <div th:replace="common :: bootstrapjs"></div>
-    <!--end-->
+<!-- 以下、各部活のトピックをBootstrapのcard-deckで表示  -->
+<!-- FIXME card-deckの表示がうまくいかない -->
+<!-- FIXME 画像の表示がうまくいかない、thymeleafが関係している？-->
+
+<div class="container">
+    <div class="row row-cols-4">
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/golf}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}" alt="画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">ゴルフコンペ開催</h3>
+                    <p class="card-text">ゴルフコンペを開催しました！楽しかった。</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#ゴルフ部</a>
+            </div>
+        </div>
+
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/majan}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">麻雀部新人歓迎会開催</h3>
+                    <p class="card-text">新しく入部した人がいるので、麻雀部で新人歓迎会を開催します！</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#麻雀部</a>
+            </div>
+        </div>
+
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/fishing}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}"　alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">大物が釣れました</h3>
+                    <p class="card-text">釣りめっちゃたのしいいいい</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#釣り部</a>
+            </div>
+        </div>
+
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/darts}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">Aフライトになりました</h3>
+                    <p class="card-text">Aフラまでの道のをここに記す。</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#ダーツ部</a>
+            </div>
+        </div>
+
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/gyoza}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">餃子消費量について</h3>
+                    <p class="card-text">静岡県浜松市vs栃木県宇都宮市。どちらが餃子の街なのか調査しました。</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#餃子部</a>
+            </div>
+        </div>
+
+        <div class="col col-md-3">
+            <div class="card">
+                <a th:href="@{/circles/gyoza}"></a>
+                <img class="card-img-top" th:src="@{images/cat.jpg}" alt="FIXME画像表示ができない">
+                <div class="card-body">
+                    <h3 class="card-title">餃子消費量について</h3>
+                    <p class="card-text">静岡県浜松市vs栃木県宇都宮市。どちらが餃子の街なのか調査しました。</p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a href="#" class="card-link">#餃子部</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Install footer from common.html-->
+<div th:replace="common :: footer"></div>
+<!--end-->
+
+<!--Install bootstrapjs from common.html-->
+<div th:replace="common :: popperjs"></div>
+<div th:replace="common :: bootstrapjs"></div>
+<!--end-->
 </body>
 </html>
