@@ -1,9 +1,10 @@
 @import '../variables.scss';
 
-.btn {
+button.btn {
     width: 116px;
     background: $btn_bg_color;
     color: #fff;
+    position: relative;
 }
 
 .btn.newpost {
@@ -25,7 +26,15 @@
     }
 }
 
-span.btn_to_newpost::before {
+.btn_to_newpost_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn_to_newpost::before {
     content: '';
     display: block;
     height: 4px;
@@ -38,7 +47,7 @@ span.btn_to_newpost::before {
     border-radius: 5px;
 }
 
-span.btn_to_newpost::after {
+.btn_to_newpost::after {
     content: '';
     display: block;
     height: 4px;
