@@ -9,8 +9,8 @@ public class PostForm {
     private String title;
     private String body;
     
-    public String getTitle() {
-        return "Title";//こうすればDB登録できた
-    }
+//    public String getTitle() {
+//        return "Title";//こうすればDB登録できた
+//    }
 
 }

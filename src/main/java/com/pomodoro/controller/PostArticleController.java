@@ -26,7 +26,7 @@ public class PostArticleController {
 
 //    @Autowired
 //    private UserApplicationService userApplicationService;
-//
+
     @Autowired
     private ArticleService articleservice; //ArticleServiceImplを注入？
 
@@ -40,17 +40,23 @@ public class PostArticleController {
     @PostMapping("/new")
     public String postRequest(@RequestParam("InputTitle") String title, @RequestParam("InputActivity") String body, Model model, PostForm form) {
         //画面から受け取った文字列をModelに登録
-        // model.addAttribute("Title",title);
-        // model.addAttribute("Body",body);
+         model.addAttribute("Title",title);
+         model.addAttribute("Body",body);
 
         // log.info(form.toString());
+        //FIXME:入力された項目を正しくマッピングできていない。formは空値なので当然そう。
+        //FIXME:formにid~bodyまでの4つ値を入れてあげれば良い。どこで入れてるのか？
+        //FIXME:入力内容とJavaクラスをマッピングするバインドがうまくいっていない（77p参照）
+        //FIXME:どうも、p80にあるHTML側の問題っぽさそう。th:objectやth:fieldをつけてjavaクラス(PostForm.java）とバインドしなければいけない
 
-        // titleをMArticleクラスに変換
-        // MArticle article = modelMapper.map(form, MArticle.class);
+        // formをMArticleクラスに変換
+         MArticle article = modelMapper.map(form, MArticle.class);
+        System.out.println(article);
         // //何らかの原因で、lombokの@Dataアノテーションが機能していない可能性アリ
         // //getterとsetterを直接記入した上で、冗長な書き方をしてみた
-        MArticle article = new MArticle();
-        article.setTitle(form.getTitle());
+//        MArticle article = new MArticle();
+//        article.setTitle(form.getTitle());
+//        System.out.println(form.getTitle());
         
 
         // ユーザー登録
