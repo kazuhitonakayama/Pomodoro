@@ -32,4 +32,11 @@
       , #{body}
     )
   </insert> -->
+  <!-- fetch post data -->
+  <select id="findMany" resultType="MArticle">
+    select
+      *
+    from
+      article
+  </select>
 </mapper>
