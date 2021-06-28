@@ -12,5 +12,5 @@ public interface ArticleService {
     /**
      * 記事取得
      */
-    public List<MArticle> getUsers();
+    public List<MArticle> getArticles();
 }
