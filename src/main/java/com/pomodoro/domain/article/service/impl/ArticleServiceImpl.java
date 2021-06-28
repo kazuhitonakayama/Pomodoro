@@ -9,12 +9,13 @@ import com.pomodoro.repository.ArticleMapper;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
+
     @Autowired
     private ArticleMapper mapper;
 
     /** 記事登録*/
     @Override
     public void postPage(MArticle article){
-        mapper.insertOne(article);
+        mapper.insertOne(article); 
     }
 }

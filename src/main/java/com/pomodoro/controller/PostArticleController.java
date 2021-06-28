@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.*;
 import com.pomodoro.domain.article.model.MArticle;
 import com.pomodoro.domain.article.service.ArticleService;
 // import com.example.form.GroupOrder;
-import com.pomodoro.form.PostForm;
+// import com.pomodoro.form.PostForm;
 
-import lombok.extern.slf4j.Slf4j;
+// // import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("/circles")
-@Slf4j
+// @Slf4j
 public class PostArticleController {
 
 //    @Autowired
@@ -30,28 +30,32 @@ public class PostArticleController {
     @Autowired
     private ArticleService articleservice; //ArticleServiceImplを注入？
 
-    @Autowired
-    private ModelMapper modelMapper;
+    // @Autowired
+    // private ModelMapper modelMapper;
 
 
-    /**
-     * 記事登録処理
-     */
+    /** 新規投稿画面を表示 */
+    @GetMapping("/new")
+    public String getNewPostPage() {
+        return "/circles/new";
+    }
+
+    /** 記事登録処理 */
     @PostMapping("/new")
-    public String postRequest(@RequestParam("InputTitle") String title, @RequestParam("InputActivity") String body, Model model, PostForm form) {
+    public String postRequest(@RequestParam("SelectClubName") String clubname, @RequestParam("InputTitle") String title, @RequestParam("InputActivity") String body, MArticle article) {
         //画面から受け取った文字列をModelに登録
         // model.addAttribute("Title",title);
         // model.addAttribute("Body",body);
 
         // log.info(form.toString());
 
-        // titleをMArticleクラスに変換
+        // // titleをMArticleクラスに変換
         // MArticle article = modelMapper.map(form, MArticle.class);
-        // //何らかの原因で、lombokの@Dataアノテーションが機能していない可能性アリ
-        // //getterとsetterを直接記入した上で、冗長な書き方をしてみた
-        MArticle article = new MArticle();
-        article.setTitle(form.getTitle());
-        
+        // // //何らかの原因で、lombokの@Dataアノテーションが機能していない可能性アリ
+        // // //getterとsetterを直接記入した上で、冗長な書き方をしてみた
+        article.setClubName(clubname);
+        article.setTitle(title);
+        article.setBody(body);
 
         // ユーザー登録
         articleservice.postPage(article);
@@ -60,7 +64,7 @@ public class PostArticleController {
         // return "redirect:/login";
 
         //toppageに画面遷移
-        return "circles/ViewTest";
+        return "redirect:/circles/new";
     }
 
 

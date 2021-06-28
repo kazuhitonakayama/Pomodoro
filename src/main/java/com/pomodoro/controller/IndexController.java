@@ -40,9 +40,6 @@ public class IndexController {
         return "/circles/gyoza";
     }
 
-    @GetMapping("/circles/new")
-    public String getNewPostPage() {
-        return "/circles/new";
-    }
+    
 
 }

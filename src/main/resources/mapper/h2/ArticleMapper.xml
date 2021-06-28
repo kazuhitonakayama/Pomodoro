@@ -8,6 +8,18 @@
   <!-- 記事1件登録 -->
   <insert id="insertOne">
     insert into article (
+       clubName
+      , title
+      , body
+    )
+    values (
+       #{clubName}
+      , #{title}
+      , #{body}
+    )
+  </insert>
+  <!-- <insert id="insertOne">
+    insert into article (
         id
       , clubName
       , title
@@ -19,5 +31,5 @@
       , #{title}
       , #{body}
     )
-  </insert>
+  </insert> -->
 </mapper>
