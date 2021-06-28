@@ -3,6 +3,7 @@ package com.pomodoro.repository;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.pomodoro.domain.article.model.MArticle;
+import java.util.List;
 
 @Mapper
 public interface ArticleMapper {
