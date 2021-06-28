@@ -5,32 +5,42 @@
     <link th:href="@{/css/components/btn.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <!--Install header from common.html-->
-    <div th:replace="common :: header"></div>
-    <!--end-->
+<!--Install header from common.html-->
+<div th:replace="common :: header"></div>
+<!--end-->
 
-    <div class="container">
-        <form>
-            <div class="mb-3">
+<div class="container">
+    <form method="post" action="/circles/new">
+        <div class="mb-3">
+            <label for="SelectClubName" class="form-label">部活名</label>
+            <select class="form-control" id="SelectClubName" name="SelectClubName">
+                <option>ゴルフ部</option>
+                <option>麻雀部</option>
+                <option>釣り部</option>
+                <option>ダーツ部</option>
+                <option>餃子部</option>
+              </select>
+        </div>
+        <div class="mb-3">
             <label for="InputTitle" class="form-label">タイトル</label>
-            <input type="text" class="form-control" id="InputTitle">
-            </div>
-            <div class="mb-3">
+            <input type="text" class="form-control" id="InputTitle" name="InputTitle">
+        </div>
+        <div class="mb-3">
             <label for="InputActivity" class="form-label">活動内容</label>
-            <textarea type="text" class="form-control" id="InputActivity"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">投稿する</button>
-        </form>
-    </div>
+            <textarea type="text" class="form-control" id="InputActivity" name="InputActivity"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">投稿する</button>
+    </form>
+</div>
 
 
-    <!--Install footer from common.html-->
-    <div th:replace="common :: footer"></div>
-    <!--end-->
+<!--Install footer from common.html-->
+<div th:replace="common :: footer"></div>
+<!--end-->
 
-    <!--Install bootstrapjs from common.html-->
-    <div th:replace="common :: popperjs"></div>
-    <div th:replace="common :: bootstrapjs"></div>
-    <!--end-->
+<!--Install bootstrapjs from common.html-->
+<div th:replace="common :: popperjs"></div>
+<div th:replace="common :: bootstrapjs"></div>
+<!--end-->
 </body>
 </html>

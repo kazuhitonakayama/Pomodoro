@@ -1,11 +1,11 @@
-package com.pomodoro.circles;
+package com.pomodoro.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 //画面などからHTTPリクエストを受け付けるクラス
 @Controller
-public class IndexContoroller {
+public class IndexController {
     /**
      * サークル一覧画面を表示
      */
@@ -15,7 +15,6 @@ public class IndexContoroller {
         return "index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
-    //REVIEW: ページを表示するだけなら、GetMappingで良いと思うが、何かしら値をやり取りするならPostMappingの方が良さそう
     @GetMapping("/circles/golf")
     public String getGolfPage() {
         return "/circles/golf";
@@ -41,9 +40,6 @@ public class IndexContoroller {
         return "/circles/gyoza";
     }
 
-    @GetMapping("/circles/new")
-    public String getNewPostPage() {
-        return "/circles/new";
-    }
+    
 
 }

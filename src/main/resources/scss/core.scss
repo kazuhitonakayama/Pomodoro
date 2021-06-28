@@ -1,12 +1,13 @@
 @import './variables.scss';
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6em;
+  font-size: 1.6em;
 }
+
 /* 以上の設定により1emが10pxになる。計算しやすくなる。基本的にフォントサイズなどはremで指定するのが良い */
 
 .right {
