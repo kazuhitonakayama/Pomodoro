@@ -8,4 +8,7 @@ import com.pomodoro.domain.article.model.MArticle;
 public interface ArticleMapper {
     /** 記事登録 */
     public int insertOne(MArticle article);
+
+    /** 記事取得 */
+    public List<MArticle> findMany();
 }
