@@ -1,14 +1,14 @@
 package com.pomodoro.controller;
 
 //import java.util.Locale;
-//import java.util.Map;
+import java.util.Map;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-// import org.springframework.validation.BindingResult;
-// import org.springframework.validation.annotation.Validated;
+ import org.springframework.validation.BindingResult;
+ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 // import com.example.application.service.UserApplicationService;
@@ -35,15 +35,23 @@ public class PostArticleController {
 
 
     /**
+     * 記事登録画面を表示
+     */
+    @GetMapping("/new")
+    public String getPost(@ModelAttribute PostForm form){
+        return "circles/new";
+    }
+
+
+    /**
      * 記事登録処理
      */
     @PostMapping("/new")
-    public String postRequest(@RequestParam("InputTitle") String title, @RequestParam("InputActivity") String body, Model model, PostForm form) {
-        //画面から受け取った文字列をModelに登録
-         model.addAttribute("Title",title);
-         model.addAttribute("Body",body);
+//    public String postRequest(@RequestParam("InputTitle") String title, @RequestParam("InputActivity") String body, Model model, PostForm form) {
+    public String postRequest(@ModelAttribute PostForm form) {
+        //ログを表示
+        log.info(form.toString());
 
-        // log.info(form.toString());
         //FIXME:入力された項目を正しくマッピングできていない。formは空値なので当然そう。
         //FIXME:formにid~bodyまでの4つ値を入れてあげれば良い。どこで入れてるのか？
         //FIXME:入力内容とJavaクラスをマッピングするバインドがうまくいっていない（77p参照）
@@ -51,13 +59,10 @@ public class PostArticleController {
 
         // formをMArticleクラスに変換
          MArticle article = modelMapper.map(form, MArticle.class);
+
+        System.out.println(form.getTitle());
         System.out.println(article);
-        // //何らかの原因で、lombokの@Dataアノテーションが機能していない可能性アリ
-        // //getterとsetterを直接記入した上で、冗長な書き方をしてみた
-//        MArticle article = new MArticle();
-//        article.setTitle(form.getTitle());
-//        System.out.println(form.getTitle());
-        
+
 
         // ユーザー登録
         articleservice.postPage(article);

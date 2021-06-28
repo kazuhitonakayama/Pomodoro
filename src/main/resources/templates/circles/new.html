@@ -10,14 +10,26 @@
 <!--end-->
 
 <div class="container">
-    <form method="post" action="/circles/new">
+    <form method="post" action="/circles/new" class=form-control th:object="${postForm}">
+<!--        <div class="mb-3" th:field="*{clubName}">-->
+<!--            <label for="SelectClubName" class="form-label">部活名</label>-->
+<!--            <select class="form-control" id="SelectClubName" name="SelectClubName" >-->
+<!--                <option>ゴルフ部</option>-->
+<!--                <option>麻雀部</option>-->
+<!--                <option>釣り部</option>-->
+<!--                <option>ダーツ部</option>-->
+<!--                <option>餃子部</option>-->
+<!--            </select>-->
+<!--        </div>-->
+        <!-- FIXME:idとnameって必要？ -->
         <div class="mb-3">
             <label for="InputTitle" class="form-label">タイトル</label>
-            <input type="text" class="form-control" id="InputTitle" name="InputTitle">
+            <input type="text" class="form-control" id="InputTitle" name="InputTitle" th:field="*{title}" >
         </div>
         <div class="mb-3">
             <label for="InputActivity" class="form-label">活動内容</label>
-            <textarea type="text" class="form-control" id="InputActivity" name="InputActivity"></textarea>
+            <textarea type="text" class="form-control"  id="InputActivity"
+                      name="InputActivity" th:field="*{body}"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">投稿する</button>
     </form>

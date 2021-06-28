@@ -8,9 +8,4 @@ public class PostForm {
     private String clubName;
     private String title;
     private String body;
-    
-//    public String getTitle() {
-//        return "Title";//こうすればDB登録できた
-//    }
-
 }

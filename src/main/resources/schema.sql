@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS article(
-    id INT (10) PRIMARY KEY,
+    id INT(100) DEFAULT 0 NOT NULL AUTO_INCREMENT,
     clubName VARCHAR (50),
     title VARCHAR (100),
     body VARCHAR (1000)
-);
+    );
