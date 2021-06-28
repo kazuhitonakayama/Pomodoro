@@ -15,6 +15,7 @@ import com.pomodoro.domain.article.service.ArticleService;
 
 //画面などからHTTPリクエストを受け付けるクラス
 @Controller
+@RequestMapping("/index")
 public class IndexController {
     @Autowired
     private ArticleService articleService;
