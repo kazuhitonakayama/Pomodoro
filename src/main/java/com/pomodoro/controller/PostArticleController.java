@@ -64,7 +64,7 @@ public class PostArticleController {
         // return "redirect:/login";
 
         //toppageに画面遷移
-        return "redirect:/circles/new";
+        return "redirect:/index";
     }
 
 
