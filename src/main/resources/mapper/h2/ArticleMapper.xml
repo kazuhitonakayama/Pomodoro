@@ -4,18 +4,13 @@
 
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.pomodoro.repository.ArticleMapper">
-
     <!-- 記事1件登録 -->
     <insert id="insertOne">
-        insert into article (
-                              clubName
+        insert into article ( clubName
                             , title
-                            , body
-        )
-        values (
-                   #{clubName}
+                            , body)
+        values ( #{clubName}
                , #{title}
-               , #{body}
-               )
+               , #{body})
     </insert>
 </mapper>
