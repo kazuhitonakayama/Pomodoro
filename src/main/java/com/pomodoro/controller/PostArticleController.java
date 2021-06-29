@@ -23,10 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/circles")
 @Slf4j
 public class PostArticleController {
-
-//    @Autowired
-//    private UserApplicationService userApplicationService;
-
     @Autowired
     private ArticleService articleservice; //ArticleServiceImplを注入？
 
@@ -42,7 +38,6 @@ public class PostArticleController {
         return "circles/new";
     }
 
-
     /**
      * 記事登録処理
      */
@@ -54,10 +49,6 @@ public class PostArticleController {
 
         // formをMArticleクラスに変換
          MArticle article = modelMapper.map(form, MArticle.class);
-
-        System.out.println(form.getTitle());
-        System.out.println(article);
-
 
         // ユーザー登録
         articleservice.postPage(article);

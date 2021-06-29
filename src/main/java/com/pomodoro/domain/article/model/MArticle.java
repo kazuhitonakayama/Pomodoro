@@ -8,8 +8,4 @@ public class MArticle {
     private String clubName;
     private String title;
     private String body;
-
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
 }

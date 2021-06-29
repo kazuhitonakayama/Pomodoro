@@ -1,5 +1,4 @@
 INSERT INTO article(
-    id,
     clubName,
     title ,
     body

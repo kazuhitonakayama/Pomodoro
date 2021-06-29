@@ -12,6 +12,7 @@
 <div class="container">
     <form method="post" action="/circles/new" class=form-control th:object="${postForm}">
         <div class="mb-3" >
+            <!--FIXME:部活名のDBを用意する-->
             <label for="SelectClubName" class="form-label">部活名</label>
             <select class="form-control" id="SelectClubName" name="SelectClubName" th:field="*{clubName}">
                 <option th:value="'ゴルフ部'" th:text="ゴルフ部"></option>
@@ -21,7 +22,7 @@
                 <option th:value="'餃子部'" th:text="餃子部"></option>
             </select>
         </div>
-        <!-- FIXME:idとnameって必要？ -->
+
         <div class="mb-3">
             <label for="InputTitle" class="form-label">タイトル</label>
             <input type="text" class="form-control" id="InputTitle" name="InputTitle" th:field="*{title}" >
