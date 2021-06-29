@@ -52,11 +52,6 @@ public class PostArticleController {
         //ログを表示
         log.info(form.toString());
 
-        //FIXME:入力された項目を正しくマッピングできていない。formは空値なので当然そう。
-        //FIXME:formにid~bodyまでの4つ値を入れてあげれば良い。どこで入れてるのか？
-        //FIXME:入力内容とJavaクラスをマッピングするバインドがうまくいっていない（77p参照）
-        //FIXME:どうも、p80にあるHTML側の問題っぽさそう。th:objectやth:fieldをつけてjavaクラス(PostForm.java）とバインドしなければいけない
-
         // formをMArticleクラスに変換
          MArticle article = modelMapper.map(form, MArticle.class);
 
