@@ -18,5 +18,8 @@
                , #{title}
                , #{body})
     </insert>
-
+    <!-- 記事1件削除 -->
+    <delete id="deleteOne">
+      delete from article where id = #{id}
+    </delete>
 </mapper>

@@ -1,6 +1,7 @@
 package com.pomodoro.repository;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.pomodoro.domain.article.model.MArticle;
 import java.util.List;
@@ -12,4 +13,7 @@ public interface ArticleMapper {
 
     /** 記事取得 */
     public List<MArticle> findMany();
+
+    /** 記事削除(1件) */
+    public int deleteOne(@Param("id") int id);
 }
