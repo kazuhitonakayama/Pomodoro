@@ -18,6 +18,6 @@ public class deleteArticleController {
 
         articleservice.deletePage(id);
 
-        return "redirect:/index";
+        return "redirect:/";
     }
 }
