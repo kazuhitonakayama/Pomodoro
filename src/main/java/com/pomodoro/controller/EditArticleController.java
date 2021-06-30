@@ -27,11 +27,8 @@ public class EditArticleController {
      */
     @GetMapping("/edit/{id}")
     public String editPost(@ModelAttribute EditForm form,Model model,@PathVariable("id") int id) {
-        // 一件取得メソッドを記述　　　　　　MArticle article = articleservice.getAr();
         MArticle article = articleservice.getArticleOne(id);
-
         form = modelMapper.map(article, EditForm.class);
-
         model.addAttribute("editForm", form);
 
         return "circles/edit";
