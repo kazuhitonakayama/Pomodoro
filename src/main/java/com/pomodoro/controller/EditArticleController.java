@@ -22,12 +22,18 @@ public class EditArticleController {
     @Autowired
     private ModelMapper modelMapper;
 
-
     /**
      * 記事登録画面を表示
      */
-    @GetMapping("/edit")
-    public String editPost(@ModelAttribute EditForm form) {
+    @GetMapping("/edit/{id}")
+    public String editPost(@ModelAttribute EditForm form,Model model,@PathVariable("id") int id) {
+        // 一件取得メソッドを記述　　　　　　MArticle article = articleservice.getAr();
+        MArticle article = articleservice.getArticleOne(id);
+
+        form = modelMapper.map(article, EditForm.class);
+
+        model.addAttribute("editForm", form);
+
         return "circles/edit";
     }
 

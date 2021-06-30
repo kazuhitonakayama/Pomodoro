@@ -31,6 +31,13 @@ public class ArticleServiceImpl implements ArticleService {
         return mapper.findMany();
     }
 
+    /** 記事取得（1件）*/
+    @Override
+    public MArticle getArticleOne(int id) {
+        return mapper.findOne(id);
+    }
+
+
     /** 記事削除（1件）*/
     @Override
     public void deletePage(int id) {

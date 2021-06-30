@@ -14,6 +14,9 @@ public interface ArticleMapper {
     /** 記事取得 */
     public List<MArticle> findMany();
 
+    /** 記事1件取得 */
+    public MArticle findOne(int id);
+
     /** 記事削除(1件) */
     public int deleteOne(@Param("id") int id);
 
