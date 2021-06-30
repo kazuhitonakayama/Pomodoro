@@ -9,6 +9,10 @@
         select *
         from article
     </select>
+    <!-- 記事1件取得 -->
+    <select id="findOne" resultType="MArticle">
+        select * from article where id = #{id}
+    </select>
     <!-- 記事1件登録 -->
     <insert id="insertOne">
         insert into article ( clubName
@@ -22,4 +26,8 @@
     <delete id="deleteOne">
       delete from article where id = #{id}
     </delete>
+    <!-- 記事1件編集 -->
+    <update id="updateOne">
+      update article set clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
+    </update>
 </mapper>

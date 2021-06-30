@@ -15,7 +15,21 @@ public interface ArticleService {
     public List<MArticle> getArticles();
 
     /**
+     * 記事取得1件
+     */
+    public MArticle getArticleOne(int id);
+
+    /**
      * 記事削除（1件）
      */
     public void deletePage(int id);
+
+    /**
+     * 記事編集（1件）
+     */
+    public void updateArticleOne(int id,
+        String clubName,
+        String title,
+        String body
+    );
 }

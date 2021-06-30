@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: meta_header('サークル一覧',~{::link},~{::script})">
+    <!-- (2)このページ固有で読み込むCSS/JS -->
+    <link th:href="@{/css/components/btn.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Install header from common.html-->
+<div th:replace="common :: header"></div>
+<!--end-->
+
+<div class="container">
+    <form method="post" th:action="@{/circles/edit}" class=form-control th:object="${editForm}">
+        <input type="hidden" th:field="*{id}" />
+        <div class="mb-3">
+            <!--FIXME:部活名のDBを用意する-->
+            <label for="SelectClubName" class="form-label">部活名</label>
+            <select class="form-control" id="SelectClubName" name="SelectClubName" th:field="*{clubName}">
+                <option th:value="'ゴルフ部'" th:text="ゴルフ部"></option>
+                <option th:value="'麻雀部'" th:text="麻雀部"></option>
+                <option th:value="'釣り部'" th:text="釣り部"></option>
+                <option th:value="'ダーツ部'" th:text="ダーツ部"></option>
+                <option th:value="'餃子部'" th:text="餃子部"></option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="InputTitle" class="form-label">タイトル</label>
+            <input type="text" class="form-control" id="InputTitle" name="InputTitle" th:field="*{title}">
+        </div>
+        <div class="mb-3">
+            <label for="InputActivity" class="form-label">活動内容</label>
+            <textarea type="text" class="form-control"  id="InputActivity"
+                      name="InputActivity" th:field="*{body}">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" name="update">編集する</button>
+    </form>
+</div>
+
+
+<!--Install footer from common.html-->
+<div th:replace="common :: footer"></div>
+<!--end-->
+
+<!--Install bootstrapjs from common.html-->
+<div th:replace="common :: popperjs"></div>
+<div th:replace="common :: bootstrapjs"></div>
+<!--end-->
+</body>
+</html>

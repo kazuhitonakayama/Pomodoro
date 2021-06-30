@@ -14,6 +14,15 @@ public interface ArticleMapper {
     /** 記事取得 */
     public List<MArticle> findMany();
 
+    /** 記事1件取得 */
+    public MArticle findOne(int id);
+
     /** 記事削除(1件) */
     public int deleteOne(@Param("id") int id);
+
+    /** 記事編集(1件) */
+    public void updateOne(@Param("id") int id,
+        @Param("clubName") String clubName,
+        @Param("title") String title,
+        @Param("body") String body);
 }
