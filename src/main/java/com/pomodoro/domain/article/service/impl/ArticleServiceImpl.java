@@ -36,4 +36,13 @@ public class ArticleServiceImpl implements ArticleService {
     public void deletePage(int id) {
         int count = mapper.deleteOne(id); 
     }
+
+    /** 記事編集（1件）*/
+    @Override
+    public void updateArticleOne(int id,
+        String clubName,
+        String title,
+        String body) {
+        mapper.updateOne(id,clubName,title,body);
+    }
 }

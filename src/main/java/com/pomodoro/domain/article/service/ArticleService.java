@@ -18,4 +18,13 @@ public interface ArticleService {
      * 記事削除（1件）
      */
     public void deletePage(int id);
+
+    /**
+     * 記事編集（1件）
+     */
+    public void updateArticleOne(int id,
+        String clubName,
+        String title,
+        String body
+    );
 }
