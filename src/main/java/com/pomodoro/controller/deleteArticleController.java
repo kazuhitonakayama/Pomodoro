@@ -13,7 +13,7 @@ public class deleteArticleController {
     @Autowired
     private ArticleService articleservice; //ArticleServiceImplを注入？
 
-    @RequestMapping(value="/circles/deleteView/{id}")
+    @RequestMapping(value="/circles/{id}")
     public String deleteArticle(@PathVariable("id") int id) {
 
         articleservice.deletePage(id);
