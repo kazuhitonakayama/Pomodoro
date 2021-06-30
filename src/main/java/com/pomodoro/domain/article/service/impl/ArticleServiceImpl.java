@@ -15,15 +15,19 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private ArticleMapper mapper;
 
-    /** 記事登録 */
+    /**
+     * 記事登録
+     */
     @Override
-    public void postPage(MArticle article){
-        mapper.insertOne(article); 
+    public void postPage(MArticle article) {
+        mapper.insertOne(article);
     }
 
-    /** 記事取得 */
+    /**
+     * 記事取得
+     */
     @Override
-    public List<MArticle> getArticles(){
+    public List<MArticle> getArticles() {
         return mapper.findMany();
     }
 }

@@ -54,7 +54,4 @@ public class IndexController {
     public String getGyozaPage() {
         return "/circles/gyoza";
     }
-
-    
-
 }
