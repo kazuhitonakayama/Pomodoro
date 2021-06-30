@@ -45,7 +45,7 @@ public class PostArticleController {
         articleservice.postPage(article);
 
         //index.htmlに画面遷移
-        return "redirect:/";
+        return "redirect:/index";
     }
 }
 

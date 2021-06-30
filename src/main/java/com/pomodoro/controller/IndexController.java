@@ -22,7 +22,7 @@ public class IndexController {
     /**
      * サークル一覧画面を表示
      */
-    @GetMapping("/") //localhost:8080/を指定
+    @GetMapping("/index") //localhost:8080/を指定
     public String getArticleList(Model model) {
         //index.htmlに画面遷移
         List<MArticle> articleList = articleService.getArticles();
