@@ -22,4 +22,8 @@
     <delete id="deleteOne">
       delete from article where id = #{id}
     </delete>
+    <!-- 記事1件編集 -->
+    <update id="updateOne">
+      update article set clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
+    </update>
 </mapper>
