@@ -44,5 +44,17 @@ public class EditArticleController {
         //index.htmlに画面遷移
         return "redirect:/";
     }
+
+    /**
+     * 記事削除処理
+     */
+    @PostMapping(value = "/edit" , params = "delete")
+    public String deleteArticle(EditForm form, Model model) {
+
+        articleservice.deletePage(form.getId());
+
+        return "redirect:/";
+    }
+
 }
 
