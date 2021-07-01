@@ -35,7 +35,7 @@ public class EditArticleController {
     }
 
     /**
-     * 記事登録処理
+     * 記事編集処理
      */
     @PostMapping(value = "/edit" , params = "update")
     public String updateArticle(EditForm form,Model model) {
