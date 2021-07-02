@@ -29,29 +29,4 @@ public class IndexController {
         model.addAttribute("articleList", articleList);
         return "index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
-
-    @GetMapping("/circles/golf")
-    public String getGolfPage() {
-        return "/circles/golf";
-    }
-
-    @GetMapping("/circles/majan")
-    public String getMajanPage() {
-        return "/circles/majan";
-    }
-
-    @GetMapping("/circles/fishing")
-    public String getFishingPage() {
-        return "/circles/fishing";
-    }
-
-    @GetMapping("/circles/darts")
-    public String getDartsPage() {
-        return "/circles/darts";
-    }
-
-    @GetMapping("/circles/gyoza")
-    public String getGyozaPage() {
-        return "/circles/gyoza";
-    }
 }
