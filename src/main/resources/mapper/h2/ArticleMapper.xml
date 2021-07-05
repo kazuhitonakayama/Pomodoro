@@ -7,15 +7,15 @@
     <!-- fetch post data -->
     <select id="findMany" resultType="MArticle">
         select *
-        from article
+        from articles
     </select>
     <!-- 記事1件取得 -->
     <select id="findOne" resultType="MArticle">
-        select * from article where id = #{id}
+        select * from articles where id = #{id}
     </select>
     <!-- 記事1件登録 -->
     <insert id="insertOne">
-        insert into article ( clubName
+        insert into articles ( clubName
                             , title
                             , body)
         values ( #{clubName}
@@ -24,10 +24,10 @@
     </insert>
     <!-- 記事1件削除 -->
     <delete id="deleteOne">
-      delete from article where id = #{id}
+      delete from articles where id = #{id}
     </delete>
     <!-- 記事1件編集 -->
     <update id="updateOne">
-      update article set clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
+      update articles set clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
     </update>
 </mapper>
