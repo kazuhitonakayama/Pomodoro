@@ -28,7 +28,7 @@ public interface ArticleService {
      * 記事編集（1件）
      */
     public void updateArticleOne(int id,
-        String clubName,
+        int circle_id,
         String title,
         String body
     );
