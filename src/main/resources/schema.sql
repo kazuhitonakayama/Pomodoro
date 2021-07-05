@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS circles(
     id INT(100) DEFAULT 0 NOT NULL AUTO_INCREMENT,
-    clubName VARCHAR (50),
+    circleName VARCHAR (50),
     description VARCHAR (50),
     PRIMARY KEY(id)
     );
