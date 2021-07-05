@@ -7,7 +7,7 @@ VALUES ('ゴルフ部', 'ゴルフコンペ開催', 'ゴルフコンペを開催
        ('ダーツ部', 'Aフライトになりました', 'Aフラまでの道のをここに記す。'),
        ('餃子部', '餃子消費量について', '静岡県浜松市vs栃木県宇都宮市。どちらが餃子の街なのか調査しました。');
 
-INSERT INTO article(clubName,
+INSERT INTO circles(clubName,
                     description)
 VALUES ('ゴルフ部','ゴルフ部です'),
        ('麻雀部','麻雀部です'),
