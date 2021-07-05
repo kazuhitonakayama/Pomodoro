@@ -63,7 +63,7 @@ public class ArticleController {
     // 編集処理
     @PostMapping(value = "/edit" , params = "update")
     public String updateArticle(EditForm form,Model model) {
-        articleservice.updateArticleOne(form.getId(), form.getClubName(), form.getTitle(), form.getBody());
+        articleservice.updateArticleOne(form.getId(), form.getCircle_id(), form.getClubName(), form.getTitle(), form.getBody());
         return "redirect:/";
     }
 

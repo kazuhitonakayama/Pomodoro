@@ -15,10 +15,12 @@
     </select>
     <!-- 記事1件登録 -->
     <insert id="insertOne">
-        insert into articles ( clubName
+        insert into articles ( circle_id 
+                            , clubName
                             , title
                             , body)
-        values ( #{clubName}
+        values ( #{circle_id}
+               , #{clubName}
                , #{title}
                , #{body})
     </insert>
@@ -28,6 +30,6 @@
     </delete>
     <!-- 記事1件編集 -->
     <update id="updateOne">
-      update articles set clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
+      update articles set circle_id = #{circle_id} ,clubName = #{clubName} , title = #{title} , body = #{body} where id = #{id}
     </update>
 </mapper>

@@ -47,9 +47,10 @@ public class ArticleServiceImpl implements ArticleService {
     /** 記事編集（1件）*/
     @Override
     public void updateArticleOne(int id,
+        int circle_id,
         String clubName,
         String title,
         String body) {
-        mapper.updateOne(id,clubName,title,body);
+        mapper.updateOne(id,circle_id,clubName,title,body);
     }
 }
