@@ -24,6 +24,11 @@ public class IndexController {
      */
     @GetMapping("/") //localhost:8080/を指定
     public String getArticleList(Model model) {
+        // circle_idを元にサークル名を取得
+        
+        // 変数にサークル名を代入
+        // View側で変数出力
+
         //index.htmlに画面遷移
         List<MArticle> articleList = articleService.getArticles();
         model.addAttribute("articleList", articleList);
