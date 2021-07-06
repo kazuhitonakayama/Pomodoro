@@ -9,20 +9,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import com.pomodoro.domain.article.model.MArticle;
-import com.pomodoro.domain.article.service.ArticleService;
 import com.pomodoro.domain.circle.model.MCircle;
 import com.pomodoro.domain.circle.service.CircleService;
+import com.pomodoro.domain.article.model.MArticle;
+import com.pomodoro.domain.article.service.ArticleService;
 
 
 //画面などからHTTPリクエストを受け付けるクラス
 @Controller
 public class IndexController {
     @Autowired
-    private ArticleService articleService;
-
-    @Autowired
     private CircleService circleService;
+    
+    @Autowired
+    private ArticleService articleService;
 
     /**
      * サークル一覧画面を表示
