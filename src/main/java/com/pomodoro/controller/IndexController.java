@@ -9,6 +9,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import com.pomodoro.domain.circle.model.MCircle;
+import com.pomodoro.domain.circle.service.CircleService;
 import com.pomodoro.domain.article.model.MArticle;
 import com.pomodoro.domain.article.service.ArticleService;
 
@@ -17,6 +19,9 @@ import com.pomodoro.domain.article.service.ArticleService;
 @Controller
 public class IndexController {
     @Autowired
+    private CircleService circleService;
+    
+    @Autowired
     private ArticleService articleService;
 
     /**
@@ -24,6 +29,11 @@ public class IndexController {
      */
     @GetMapping("/") //localhost:8080/を指定
     public String getArticleList(Model model) {
+        // circle_idを元にサークル名を取得
+
+        // 変数にサークル名を代入
+        // View側で変数出力
+
         //index.htmlに画面遷移
         List<MArticle> articleList = articleService.getArticles();
         model.addAttribute("articleList", articleList);

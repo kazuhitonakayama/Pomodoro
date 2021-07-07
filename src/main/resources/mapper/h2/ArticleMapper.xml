@@ -8,6 +8,8 @@
     <select id="findMany" resultType="MArticle">
         select *
         from articles
+        left join circles 
+          on articles.circle_id = circles.id
     </select>
     <!-- 記事1件取得 -->
     <select id="findOne" resultType="MArticle">
