@@ -8,4 +8,6 @@ public class MArticle {
     private int circle_id;
     private String title;
     private String body;
+    private String circleName;
+    private String description;
 }
