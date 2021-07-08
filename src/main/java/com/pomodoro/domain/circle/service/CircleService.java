@@ -4,20 +4,20 @@ import com.pomodoro.domain.circle.model.MCircle;
 import java.util.List;
 
 public interface CircleService {
-    // /**
-    //  * 記事登録
-    //  */
-    // public void postPage(MArticle article);
+     /**
+      * 記事登録
+      */
+     public void postCircle(MCircle circle);
 
     // /**
     //  * 記事取得
     //  */
     // public List<MArticle> getArticles();
 
-    /**
-     * サークル取得1件
-     */
-    public MCircle getCircleName(int id);
+//    /**
+//     * サークル取得1件
+//     */
+//    public MCircle getCircleName(int id);
 
     // /**
     //  * 記事削除（1件）

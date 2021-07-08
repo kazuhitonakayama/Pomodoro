@@ -30,8 +30,10 @@ public class ArticleController {
     // 新規投稿画面を表示
     @GetMapping("/new")
     public String getPost(@ModelAttribute PostForm form) {
-        return "circles/new";
+        return "articles/new";
     }
+    //FIXME:getPostPageにリファクタする
+
     // 新規投稿処理
     @PostMapping("/new")
     public String postRequest(@ModelAttribute PostForm form) {
@@ -54,15 +56,16 @@ public class ArticleController {
      */
     // 編集画面を表示
     @GetMapping("/edit/{id}")
-    public String editPost(@ModelAttribute EditForm form,Model model,@PathVariable("id") int id) {
+    public String editPost(@ModelAttribute EditForm form, Model model, @PathVariable("id") int id) {
         MArticle article = articleservice.getArticleOne(id);
         form = modelMapper.map(article, EditForm.class);
         model.addAttribute("editForm", form);
-        return "circles/edit";
+        return "articles/edit";
     }
+
     // 編集処理
-    @PostMapping(value = "/edit" , params = "update")
-    public String updateArticle(EditForm form,Model model) {
+    @PostMapping(value = "/edit", params = "update")
+    public String updateArticle(EditForm form, Model model) {
         articleservice.updateArticleOne(form.getId(), form.getCircle_id(), form.getTitle(), form.getBody());
         return "redirect:/";
     }
@@ -70,7 +73,7 @@ public class ArticleController {
     /**
      * 記事削除処理
      */
-    @PostMapping(value = "/edit" , params = "delete")
+    @PostMapping(value = "/edit", params = "delete")
     public String deleteArticle(EditForm form, Model model) {
         articleservice.deletePage(form.getId());
         return "redirect:/";

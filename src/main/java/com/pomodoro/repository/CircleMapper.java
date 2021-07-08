@@ -8,14 +8,14 @@ import java.util.List;
 
 @Mapper
 public interface CircleMapper {
-    // /** 記事登録 */
-    // public int insertOne(MArticle article);
+     /** 部活登録 */
+     public int insertOne(MCircle circle);
 
     // /** 記事取得 */
     // public List<MArticle> findMany();
 
-    /** サークル1件取得 */
-    public MCircle findCircleName(int id);
+//    /** サークル1件取得 */
+//    public MCircle findCircleName(int id);
 
     // /** 記事削除(1件) */
     // public int deleteOne(@Param("id") int id);

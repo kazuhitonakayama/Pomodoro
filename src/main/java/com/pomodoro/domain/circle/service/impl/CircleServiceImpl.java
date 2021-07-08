@@ -15,13 +15,13 @@ public class CircleServiceImpl implements CircleService {
     @Autowired
     private CircleMapper mapper;
 
-    // /**
-    //  * 記事登録
-    //  */
-    // @Override
-    // public void postPage(MArticle article) {
-    //     mapper.insertOne(article);
-    // }
+     /**
+      * 記事登録
+      */
+     @Override
+     public void postCircle(MCircle circle) {
+         mapper.insertOne(circle);
+     }
 
     // /**
     //  * 記事取得
@@ -31,17 +31,17 @@ public class CircleServiceImpl implements CircleService {
     //     return mapper.findMany();
     // }
 
-    /** 記事取得（1件）*/
-    @Override
-    public MCircle getCircleName(int id) {
-        return mapper.findCircleName(id);
-    }
+//    /** 記事取得（1件）*/
+//    @Override
+//    public MCircle getCircleName(int id) {
+//        return mapper.findCircleName(id);
+//    }
 
 
     // /** 記事削除（1件）*/
     // @Override
     // public void deletePage(int id) {
-    //     int count = mapper.deleteOne(id); 
+    //     int count = mapper.deleteOne(id);
     // }
 
     // /** 記事編集（1件）*/
