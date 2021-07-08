@@ -24,7 +24,4 @@ public interface CircleMapper {
     public void updateOne(@Param("id") int id,
         @Param("circleName") String circleName,
         @Param("description") String description);
-    
-    /** サークルに関連するArticleの全削除 */
-    public int deleteArticlesOfCircle(@Param("id") int id);
 }

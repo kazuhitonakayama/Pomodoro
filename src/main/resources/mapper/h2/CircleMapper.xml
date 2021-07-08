@@ -28,11 +28,7 @@
 
     <!-- サークル1件削除 -->
     <delete id="deleteOne">
-        delete from circles where id = #{id};
-    </delete>
-
-    <!-- サークルに関連するArticleの全件削除 -->
-    <delete id="deleteArticlesOfCircle">
         delete from articles where circle_id = #{id};
+        delete from circles where id = #{id};
     </delete>
 </mapper>

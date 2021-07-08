@@ -43,10 +43,6 @@ public class CircleServiceImpl implements CircleService {
      public void deleteCircleOne(int id) {
          mapper.deleteOne(id);
      }
-     @Override
-     public void deleteRelatedArticles(int id) {
-         mapper.deleteArticlesOfCircle(id);
-     }
 
      /** 記事編集（1件）*/
     @Override

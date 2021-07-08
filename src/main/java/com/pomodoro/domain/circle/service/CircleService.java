@@ -23,7 +23,6 @@ public interface CircleService {
      * サークル削除（1件）
     */
     public void deleteCircleOne(int id);
-    public void deleteRelatedArticles(int id);
 
     /**
      * 記事編集（1件）
