@@ -10,4 +10,10 @@
         values ( #{circleName}
                , #{description})
     </insert>
+
+<!-- fetch post data -->
+    <select id="findMany" resultType="MCircle">
+        select *
+        from circles
+    </select>
 </mapper>

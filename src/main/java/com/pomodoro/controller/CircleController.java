@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import com.pomodoro.domain.article.model.MArticle;
 import com.pomodoro.domain.article.service.ArticleService;
 import com.pomodoro.form.EditForm;
@@ -47,6 +48,15 @@ public class CircleController {
 
         //index.htmlに画面遷移
         return "redirect:/";
+    }
+
+    @GetMapping("") //localhost:8080/circlesを指定
+    public String getCircleList(Model model) {
+
+        //circles/index.htmlに画面遷移
+        List<MCircle> circleList = circleService.getCircles();
+        model.addAttribute("circleList", circleList);
+        return "circles/index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
 }

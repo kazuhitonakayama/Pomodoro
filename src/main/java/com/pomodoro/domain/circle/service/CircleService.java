@@ -9,10 +9,10 @@ public interface CircleService {
       */
      public void postCircle(MCircle circle);
 
-    // /**
-    //  * 記事取得
-    //  */
-    // public List<MArticle> getArticles();
+    /**
+     * サークル取得
+     */
+    public List<MCircle> getCircles();
 
 //    /**
 //     * サークル取得1件

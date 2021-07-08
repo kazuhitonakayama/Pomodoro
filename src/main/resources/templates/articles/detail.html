@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: meta_header('活動詳細',~{::link},~{::script})">
+    <!-- (2)このページ固有で読み込むCSS/JS -->
+    <link th:href="@{/css/components/card_style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/components/btn.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Install header from common.html-->
+<div th:replace="common :: header"></div>
+<!--end-->
+<h1 th:text="${title}"></h1>
+<p th:text="${body}"></p>
+
+<div th:replace="common :: footer"></div>
+
+<!--Install bootstrapjs from common.html-->
+<div th:replace="common :: popperjs"></div>
+<div th:replace="common :: bootstrapjs"></div>
+<!--end-->
+</body>
+</html>

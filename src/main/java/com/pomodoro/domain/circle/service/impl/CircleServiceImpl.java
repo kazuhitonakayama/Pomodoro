@@ -23,13 +23,13 @@ public class CircleServiceImpl implements CircleService {
          mapper.insertOne(circle);
      }
 
-    // /**
-    //  * 記事取得
-    //  */
-    // @Override
-    // public List<MArticle> getArticles() {
-    //     return mapper.findMany();
-    // }
+    /**
+     * サークル取得
+     */
+    @Override
+    public List<MCircle> getCircles() {
+        return mapper.findMany();
+    }
 
 //    /** 記事取得（1件）*/
 //    @Override
