@@ -14,22 +14,21 @@ public interface CircleService {
      */
     public List<MCircle> getCircles();
 
-//    /**
-//     * サークル取得1件
-//     */
-//    public MCircle getCircleName(int id);
+   /**
+    * サークル取得1件
+    */
+   public MCircle getCircleOne(int id);
 
     // /**
     //  * 記事削除（1件）
     //  */
     // public void deletePage(int id);
 
-    // /**
-    //  * 記事編集（1件）
-    //  */
-    // public void updateArticleOne(int id,
-    //     int circle_id,
-    //     String title,
-    //     String body
-    // );
+    /**
+     * 記事編集（1件）
+     */
+    public void updateCircleOne(int id,
+        String circleName,
+        String description
+    );
 }

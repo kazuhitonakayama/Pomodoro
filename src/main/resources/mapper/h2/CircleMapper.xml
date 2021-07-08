@@ -11,9 +11,18 @@
                , #{description})
     </insert>
 
-<!-- fetch post data -->
+    <!-- fetch post data -->
     <select id="findMany" resultType="MCircle">
         select *
         from circles
     </select>
+
+    <select id="findCircleOne" resultType="MCircle">
+        select * from circles where id = #{id}
+    </select>
+
+    <!-- サークル1件編集 -->
+    <update id="updateOne">
+      update circles set circleName = #{circleName} , description = #{description} where id = #{id}
+    </update>
 </mapper>
