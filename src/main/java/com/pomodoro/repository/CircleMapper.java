@@ -12,7 +12,7 @@ public interface CircleMapper {
      public int insertOne(MCircle circle);
 
     // /** 記事取得 */
-    // public List<MArticle> findMany();
+    public List<MCircle> findMany();
 
 //    /** サークル1件取得 */
 //    public MCircle findCircleName(int id);
