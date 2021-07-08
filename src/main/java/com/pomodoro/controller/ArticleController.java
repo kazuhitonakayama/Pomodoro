@@ -32,7 +32,7 @@ public class ArticleController {
     public String getPost(@ModelAttribute PostForm form) {
         return "articles/new";
     }
-
+    //FIXME:getPostPageにリファクタする
     // 新規投稿処理
     @PostMapping("/new")
     public String postRequest(@ModelAttribute PostForm form) {
