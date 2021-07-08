@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.pomodoro.domain.circle.model.MCircle;
 import java.util.List;
-
+//NOTE:現在このクラスは使用されていません。
 @Mapper
 public interface CircleMapper {
     // /** 記事登録 */
@@ -14,8 +14,8 @@ public interface CircleMapper {
     // /** 記事取得 */
     // public List<MArticle> findMany();
 
-    /** サークル1件取得 */
-    public MCircle findCircleName(int id);
+//    /** サークル1件取得 */
+//    public MCircle findCircleName(int id);
 
     // /** 記事削除(1件) */
     // public int deleteOne(@Param("id") int id);
