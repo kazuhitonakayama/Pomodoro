@@ -10,5 +10,4 @@
         values ( #{circleName}
                , #{description})
     </insert>
-
 </mapper>
