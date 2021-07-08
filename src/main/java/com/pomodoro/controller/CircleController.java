@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 import com.pomodoro.domain.article.model.MArticle;
 import com.pomodoro.domain.article.service.ArticleService;
 import com.pomodoro.form.EditForm;
@@ -34,6 +35,7 @@ public class CircleController {
     public String getCirclePostPage(@ModelAttribute CreateCircleForm form) {
         return "circles/new";
     }
+
     // 新規部活投稿処理
     @PostMapping("/new")
     public String postRequest(@ModelAttribute CreateCircleForm form) {
@@ -70,10 +72,20 @@ public class CircleController {
         model.addAttribute("editCircleForm", form);
         return "circles/edit";
     }
+
     // 編集処理
     @PostMapping(value = "/edit", params = "update")
     public String updateCircle(EditCircleForm form, Model model) {
         circleService.updateCircleOne(form.getId(), form.getCircleName(), form.getDescription());
+        return "redirect:";
+    }
+
+    /**
+     * サークル削除処理
+     */
+    @PostMapping(value = "/edit", params = "delete")
+    public String deleteCircle(EditCircleForm form, Model model) {
+        circleService.deleteCircleOne(form.getId());
         return "redirect:";
     }
 }

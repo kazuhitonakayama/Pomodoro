@@ -38,13 +38,13 @@ public class CircleServiceImpl implements CircleService {
    }
 
 
-    // /** 記事削除（1件）*/
-    // @Override
-    // public void deletePage(int id) {
-    //     int count = mapper.deleteOne(id);
-    // }
+     /** 記事削除（1件）*/
+     @Override
+     public void deleteCircleOne(int id) {
+         int count = mapper.deleteOne(id);
+     }
 
-    // /** 記事編集（1件）*/
+     /** 記事編集（1件）*/
     @Override
     public void updateCircleOne(int id,
         String circleName,

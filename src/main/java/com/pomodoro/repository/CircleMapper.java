@@ -17,8 +17,8 @@ public interface CircleMapper {
    /** サークル1件取得 */
    public MCircle findCircleOne(int id);
 
-    // /** 記事削除(1件) */
-    // public int deleteOne(@Param("id") int id);
+     /** 記事削除(1件) */
+     public int deleteOne(@Param("id") int id);
 
     /** 記事編集(1件) */
     public void updateOne(@Param("id") int id,
