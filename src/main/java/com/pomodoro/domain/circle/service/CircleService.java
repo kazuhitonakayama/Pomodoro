@@ -19,10 +19,10 @@ public interface CircleService {
     */
    public MCircle getCircleOne(int id);
 
-    // /**
-    //  * 記事削除（1件）
-    //  */
-    // public void deletePage(int id);
+    /**
+     * サークル削除（1件）
+    */
+    public void deleteCircleOne(int id);
 
     /**
      * 記事編集（1件）
