@@ -32,10 +32,10 @@ public class CircleServiceImpl implements CircleService {
     }
 
 //    /** 記事取得（1件）*/
-//    @Override
-//    public MCircle getCircleName(int id) {
-//        return mapper.findCircleName(id);
-//    }
+   @Override
+   public MCircle getCircleOne(int id) {
+       return mapper.findCircleOne(id);
+   }
 
 
     // /** 記事削除（1件）*/
@@ -45,11 +45,10 @@ public class CircleServiceImpl implements CircleService {
     // }
 
     // /** 記事編集（1件）*/
-    // @Override
-    // public void updateArticleOne(int id,
-    //     int circle_id,
-    //     String title,
-    //     String body) {
-    //     mapper.updateOne(id,circle_id,title,body);
-    // }
+    @Override
+    public void updateCircleOne(int id,
+        String circleName,
+        String description) {
+        mapper.updateOne(id,circleName,description);
+    }
 }

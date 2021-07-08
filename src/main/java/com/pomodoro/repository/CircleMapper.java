@@ -14,15 +14,14 @@ public interface CircleMapper {
     // /** 記事取得 */
     public List<MCircle> findMany();
 
-//    /** サークル1件取得 */
-//    public MCircle findCircleName(int id);
+   /** サークル1件取得 */
+   public MCircle findCircleOne(int id);
 
     // /** 記事削除(1件) */
     // public int deleteOne(@Param("id") int id);
 
-    // /** 記事編集(1件) */
-    // public void updateOne(@Param("id") int id,
-    //     @Param("circle_id") int circle_id,
-    //     @Param("title") String title,
-    //     @Param("body") String body);
+    /** 記事編集(1件) */
+    public void updateOne(@Param("id") int id,
+        @Param("circleName") String circleName,
+        @Param("description") String description);
 }

@@ -3,6 +3,7 @@ package com.pomodoro.controller;
 import com.pomodoro.domain.circle.model.MCircle;
 import com.pomodoro.domain.circle.service.CircleService;
 import com.pomodoro.form.circles.CreateCircleForm;
+import com.pomodoro.form.circles.EditCircleForm;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,6 @@ public class CircleController {
     public String getCirclePostPage(@ModelAttribute CreateCircleForm form) {
         return "circles/new";
     }
-
     // 新規部活投稿処理
     @PostMapping("/new")
     public String postRequest(@ModelAttribute CreateCircleForm form) {
@@ -59,4 +59,21 @@ public class CircleController {
         return "circles/index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
+    /**
+     * 記事編集
+     */
+    // 編集画面を表示
+    @GetMapping("/edit/{id}")
+    public String editPost(@ModelAttribute EditCircleForm form, Model model, @PathVariable("id") int id) {
+        MCircle circle = circleService.getCircleOne(id);
+        form = modelMapper.map(circle, EditCircleForm.class);
+        model.addAttribute("editCircleForm", form);
+        return "circles/edit";
+    }
+    // 編集処理
+    @PostMapping(value = "/edit", params = "update")
+    public String updateCircle(EditCircleForm form, Model model) {
+        circleService.updateCircleOne(form.getId(), form.getCircleName(), form.getDescription());
+        return "redirect:";
+    }
 }
