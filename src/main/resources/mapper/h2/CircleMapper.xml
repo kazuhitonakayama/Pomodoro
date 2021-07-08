@@ -4,7 +4,11 @@
 
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.pomodoro.repository.CircleMapper">
-  <select id="findCircleName" resultType="MCircle">
-    select * from circles where id = #{circle_id}
-  </select>
+    <insert id="insertOne">
+        insert into articles ( circleName
+                             , description)
+        values ( #{circleName}
+               , #{description})
+    </insert>
+
 </mapper>
