@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class MCircle {
     private int id;
-    private int circleName;
+    private String circleName;
     private String description;
 }

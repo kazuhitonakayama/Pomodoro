@@ -5,7 +5,7 @@
 <!-- Mapperとxmlのマッピング -->
 <mapper namespace="com.pomodoro.repository.CircleMapper">
     <insert id="insertOne">
-        insert into articles ( circleName
+        insert into circles ( circleName
                              , description)
         values ( #{circleName}
                , #{description})

@@ -10,7 +10,7 @@
 <!--end-->
 
 <div class="container">
-    <form method="post" action="/articles/new" class=form-control th:object="${createCircleForm}">
+    <form method="post" action="/circles/new" class=form-control th:object="${createCircleForm}">
         <div class="mb-3">
             <label for="InputCircleName" class="form-label">部活名</label>
             <input type="text" class="form-control" id="InputCircleName" name="InputTitle" th:field="*{circleName}">
