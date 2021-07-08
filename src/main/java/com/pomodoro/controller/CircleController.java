@@ -85,6 +85,7 @@ public class CircleController {
      */
     @PostMapping(value = "/edit", params = "delete")
     public String deleteCircle(EditCircleForm form, Model model) {
+        circleService.deleteRelatedArticles(form.getId());
         circleService.deleteCircleOne(form.getId());
         return "redirect:";
     }
