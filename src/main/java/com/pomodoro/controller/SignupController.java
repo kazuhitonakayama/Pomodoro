@@ -1,8 +1,11 @@
 package com.pomodoro.controller;
 
 import com.pomodoro.application.service.UserApplicationService;
+import com.pomodoro.domain.user.model.MUser;
+import com.pomodoro.domain.user.service.UserService;
 import com.pomodoro.form.SignupForm;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Locale;
 import java.util.Map;
 
 @Controller
@@ -20,6 +22,15 @@ import java.util.Map;
 public class SignupController {
     @Autowired
     private UserApplicationService userApplicationService;
+
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
+
 
     /**
      * ユーザー登録画面を表示
@@ -40,6 +51,13 @@ public class SignupController {
     @PostMapping("/signup")
     public String postSignup(@ModelAttribute SignupForm form) {
         log.info(form.toString()); //slf4jを使ってform入力のログを表示
+
+
+        //formをMUserクラスに変換
+        MUser user = modelMapper.map(form, MUser.class);
+        //ユーザ登録
+        userService.registUser(user);
+
         // ログイン画面にリダイレクト
         return "redirect:/login";
     }
