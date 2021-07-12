@@ -23,7 +23,6 @@ public class SignupController {
     @Autowired
     private UserApplicationService userApplicationService;
 
-
     @Autowired
     private UserService userService;
 
@@ -31,12 +30,11 @@ public class SignupController {
     private ModelMapper modelMapper;
 
 
-
     /**
      * ユーザー登録画面を表示
      */
     @GetMapping("/signup")
-    public String getSignup(Model model,  @ModelAttribute SignupForm form) {
+    public String getSignup(Model model, @ModelAttribute SignupForm form) {
         //性別を取得
         Map<String, Integer> genderMap = userApplicationService.getGenderMap();
         model.addAttribute("genderMap", genderMap);
@@ -52,14 +50,13 @@ public class SignupController {
     public String postSignup(@ModelAttribute SignupForm form) {
         log.info(form.toString()); //slf4jを使ってform入力のログを表示
 
-
         //formをMUserクラスに変換
         MUser user = modelMapper.map(form, MUser.class);
+
         //ユーザ登録
         userService.registUser(user);
 
         // ログイン画面にリダイレクト
         return "redirect:/login";
     }
-
 }
