@@ -2,12 +2,19 @@ package com.pomodoro.form;
 
 import java.util.Date;
 
-import org.apache.ibatis.annotations.Param;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
-import javax.validation.constraints.*;
+
 
 @Data
 public class SignupForm {
@@ -27,7 +34,6 @@ public class SignupForm {
     @NotNull
     private Date birthday;
 
-    @NotNull
     @Min(10)
     @Max(120)
     private Integer age;

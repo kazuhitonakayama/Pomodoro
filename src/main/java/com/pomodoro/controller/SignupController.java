@@ -50,6 +50,8 @@ public class SignupController {
      */
     @PostMapping("/signup")
     public String postSignup(Model model, @ModelAttribute @Validated SignupForm form, BindingResult bindingResult) {
+
+        System.out.println(bindingResult);
         //入力チェック結果
         if(bindingResult.hasErrors()){
             //NG：ユーザー登録画面に戻ります
@@ -57,11 +59,11 @@ public class SignupController {
         }
         log.info(form.toString()); //slf4jを使ってform入力のログを表示
 
-        //formをMUserクラスに変換
-        MUser user = modelMapper.map(form, MUser.class);
-
-        //ユーザ登録
-        userService.registUser(user);
+//        //formをMUserクラスに変換
+//        MUser user = modelMapper.map(form, MUser.class);
+//
+//        //ユーザ登録
+//        userService.registUser(user);
 
         // ログイン画面にリダイレクト
         return "redirect:/login";
