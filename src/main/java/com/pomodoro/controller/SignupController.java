@@ -3,6 +3,7 @@ package com.pomodoro.controller;
 import com.pomodoro.application.service.UserApplicationService;
 import com.pomodoro.domain.user.model.MUser;
 import com.pomodoro.domain.user.service.UserService;
+import com.pomodoro.form.GroupOrder;
 import com.pomodoro.form.SignupForm;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -49,7 +50,7 @@ public class SignupController {
      * ユーザー登録処理
      */
     @PostMapping("/signup")
-    public String postSignup(Model model, @ModelAttribute @Validated SignupForm form, BindingResult bindingResult) {
+    public String postSignup(Model model, @ModelAttribute @Validated(GroupOrder.class) SignupForm form, BindingResult bindingResult) {
 
         System.out.println(bindingResult);
         //入力チェック結果
