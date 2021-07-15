@@ -21,6 +21,19 @@
         select * from circles where id = #{id}
     </select>
 
+    <select id="findArticlesOfCircle" resultType="MArticle">
+        select *
+        from articles
+        left join circles on articles.circle_id = circles.id
+        where circle_id = #{id}
+    </select>
+    
+    <select id="findCircleName" resultType="String">
+        select circleName
+        from circles
+        where id = #{id}
+    </select>
+
     <!-- サークル1件編集 -->
     <update id="updateOne">
       update circles set circleName = #{circleName} , description = #{description} where id = #{id}
