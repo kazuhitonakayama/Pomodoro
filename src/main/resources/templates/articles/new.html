@@ -14,11 +14,7 @@
         <div class="mb-3">
             <label for="SelectCircleName" class="form-label">部活名</label>
             <select class="form-control" id="SelectCircleName" name="SelectCircleName" th:field="*{circle_id}">
-                <option th:value='1' th:text="ゴルフ部"></option>
-                <option th:value='2' th:text="麻雀部"></option>
-                <option th:value='3' th:text="釣り部"></option>
-                <option th:value='4' th:text="ダーツ部"></option>
-                <option th:value='5' th:text="餃子部"></option>
+                <option th:each="item: ${circleList}" th:value="${item.id}" th:text="${item.circleName}"></option>
             </select>
         </div>
 
