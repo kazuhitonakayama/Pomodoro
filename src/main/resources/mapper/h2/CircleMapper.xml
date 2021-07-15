@@ -6,7 +6,7 @@
 <mapper namespace="com.pomodoro.repository.CircleMapper">
     <insert id="insertOne">
         insert into circles ( circleName
-                             , description)
+                            , description)
         values ( #{circleName}
                , #{description})
     </insert>
@@ -18,16 +18,18 @@
     </select>
 
     <select id="findCircleOne" resultType="MCircle">
-        select * from circles where id = #{id}
+        select *
+        from circles
+        where id = #{id}
     </select>
 
     <select id="findArticlesOfCircle" resultType="MArticle">
         select *
         from articles
-        left join circles on articles.circle_id = circles.id
+                 left join circles on articles.circle_id = circles.id
         where circle_id = #{id}
     </select>
-    
+
     <select id="findCircleName" resultType="String">
         select circleName
         from circles
@@ -36,12 +38,14 @@
 
     <!-- サークル1件編集 -->
     <update id="updateOne">
-      update circles set circleName = #{circleName} , description = #{description} where id = #{id}
+        update circles
+        set circleName  = #{circleName},
+            description = #{description}
+        where id = #{id}
     </update>
 
     <!-- サークル1件削除 -->
     <delete id="deleteOne">
-        delete from articles where circle_id = #{id};
-        delete from circles where id = #{id};
+        update circles set isActive = 0 where id = #{id}
     </delete>
 </mapper>

@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS circles(
     id INT(100) DEFAULT 0 NOT NULL AUTO_INCREMENT,
     circleName VARCHAR (50),
     description VARCHAR (1000),
+    isActive BIT DEFAULT 1,
     PRIMARY KEY(id)
     );
 
