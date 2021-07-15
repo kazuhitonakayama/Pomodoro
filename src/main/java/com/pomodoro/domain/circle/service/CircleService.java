@@ -1,6 +1,7 @@
 package com.pomodoro.domain.circle.service;
 
 import com.pomodoro.domain.circle.model.MCircle;
+import com.pomodoro.domain.article.model.MArticle;
 import java.util.List;
 
 public interface CircleService {
@@ -14,10 +15,20 @@ public interface CircleService {
      */
     public List<MCircle> getCircles();
 
-   /**
+    /**
+     * サークルの活動一覧を取得
+     */
+    public List<MArticle> getArticles(int id);
+
+    /**
+     * サークルの名前を取得 @ サークル詳細ページ
+     */
+    public String getCircleName(int id);
+
+    /**
     * サークル取得1件
     */
-   public MCircle getCircleOne(int id);
+    public MCircle getCircleOne(int id);
 
     /**
      * サークル削除（1件）

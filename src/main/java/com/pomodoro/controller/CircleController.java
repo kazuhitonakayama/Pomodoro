@@ -88,4 +88,17 @@ public class CircleController {
         circleService.deleteCircleOne(form.getId());
         return "redirect:";
     }
+
+    /**
+     * サークル詳細ページへの遷移
+     */
+    @GetMapping("/{id}")
+    public String getCircleShowPage(Model model, @PathVariable("id") int id) {
+        String circleName = circleService.getCircleName(id);
+        model.addAttribute("circleName", circleName);
+
+        List<MArticle> circleList = circleService.getArticles(id);
+        model.addAttribute("circleActivityList", circleList);
+        return "circles/show";
+    }
 }
