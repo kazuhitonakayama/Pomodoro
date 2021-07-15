@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import com.pomodoro.domain.article.model.MArticle;
+import com.pomodoro.domain.circle.model.MCircle;
 import com.pomodoro.domain.article.service.ArticleService;
+import com.pomodoro.domain.circle.service.CircleService;
 import com.pomodoro.form.EditForm;
 import com.pomodoro.form.PostForm;
 import org.springframework.ui.Model;
@@ -21,6 +24,9 @@ public class ArticleController {
     private ArticleService articleservice;
 
     @Autowired
+    private CircleService circleservice;
+
+    @Autowired
     private ModelMapper modelMapper;
 
 
@@ -29,7 +35,9 @@ public class ArticleController {
      */
     // 新規投稿画面を表示
     @GetMapping("/new")
-    public String getPost(@ModelAttribute PostForm form) {
+    public String getPost(@ModelAttribute PostForm form, Model model) {
+        List<MCircle> circleList = circleservice.getCircles();
+        model.addAttribute("circleList", circleList);
         return "articles/new";
     }
     //FIXME:getPostPageにリファクタする
@@ -60,6 +68,9 @@ public class ArticleController {
         MArticle article = articleservice.getArticleOne(id);
         form = modelMapper.map(article, EditForm.class);
         model.addAttribute("editForm", form);
+        
+        List<MCircle> circleList = circleservice.getCircles();
+        model.addAttribute("circleList", circleList);
         return "articles/edit";
     }
 
