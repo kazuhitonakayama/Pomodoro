@@ -1,10 +1,11 @@
 INSERT INTO circles(circleName,
-                    description)
-VALUES ('ゴルフ部', 'ゴルフ部です'),
-       ('麻雀部', '麻雀部です'),
-       ('釣り部', '釣り部です'),
-       ('ダーツ部', 'ダーツ部です'),
-       ('餃子部', '餃子部です');
+                    description,
+                    isActive)
+VALUES ('ゴルフ部', 'ゴルフ部です',1),
+       ('麻雀部', '麻雀部です',1),
+       ('釣り部', '釣り部です',1),
+       ('ダーツ部', 'ダーツ部です',1),
+       ('餃子部', '餃子部です',1);
 
 INSERT INTO articles(circle_id,
                      title,
