@@ -17,6 +17,11 @@
         from circles
     </select>
 
+    <select id="findHidden" resultType="MCircle">
+        select *
+        from circles where isActive = false
+    </select>
+
     <select id="findCircleOne" resultType="MCircle">
         select *
         from circles

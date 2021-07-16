@@ -16,6 +16,11 @@ public interface CircleService {
     public List<MCircle> getCircles();
 
     /**
+     * 非表示サークル取得
+     */
+    public List<MCircle> getHiddenCircles();
+
+    /**
      * サークルの活動一覧を取得
      */
     public List<MArticle> getArticles(int id);

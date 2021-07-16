@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common :: meta_header('非表示サークル一覧',~{::link},~{::script})">
+    <!-- (2)このページ固有で読み込むCSS/JS -->
+    <link th:href="@{/css/components/card_style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/components/btn.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Install header from common.html-->
+<div th:replace="common :: header"></div>
+<!--end-->
+
+<!-- 以下、各部活のトピックをBootstrapのcardで表示  -->
+<div class="container">
+    <div class="row row-cols-4">
+        <div class="col col-md-3" th:each="item: ${hiddenCircleList}">
+            <div class="card">
+                <a th:href="@{/articles/golf}"></a>
+                <img class="card-img-top" th:src="@{/images/cat.jpg}" alt="ゴルフコンペの画像">
+                <div class="card-body">
+                    <h3 class="card-title" th:text="${item.circleName}"></h3>
+                    <p class="card-text" th:text="${item.description}"></p>
+                </div>
+            </div>
+            <div class="card-footer right">
+                <a th:href="@{/circles/edit/{id}(id=${item.id})}" class="card-link">編集</a>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="common :: btn_to_create_circle"></div>
+</div>
+
+<div th:replace="common :: footer"></div>
+
+<!--Install bootstrapjs from common.html-->
+<div th:replace="common :: popperjs"></div>
+<div th:replace="common :: bootstrapjs"></div>
+<!--end-->
+</body>
+</html>

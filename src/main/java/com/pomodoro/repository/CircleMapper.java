@@ -15,6 +15,9 @@ public interface CircleMapper {
     // /** 記事取得 */
     public List<MCircle> findMany();
 
+    // /** 非表示サークル取得 */
+    public List<MCircle> findHidden();
+
     /** サークル1件取得 */
     public MCircle findCircleOne(int id);
 
