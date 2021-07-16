@@ -73,7 +73,8 @@ public class CircleServiceImpl implements CircleService {
     @Override
     public void updateCircleOne(int id,
         String circleName,
-        String description) {
-        mapper.updateOne(id,circleName,description);
+        String description,
+        Boolean isActive) {
+        mapper.updateOne(id,circleName,description,isActive);
     }
 }

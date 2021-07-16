@@ -33,5 +33,6 @@ public interface CircleMapper {
     /** サークル編集(1件) */
     public void updateOne(@Param("id") int id,
         @Param("circleName") String circleName,
-        @Param("description") String description);
+        @Param("description") String description,
+        @Param("isActive") Boolean isActive);
 }

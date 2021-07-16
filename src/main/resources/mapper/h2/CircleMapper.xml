@@ -45,7 +45,8 @@
     <update id="updateOne">
         update circles
         set circleName  = #{circleName},
-            description = #{description}
+            description = #{description},
+            isActive = #{isActive}
         where id = #{id}
     </update>
 

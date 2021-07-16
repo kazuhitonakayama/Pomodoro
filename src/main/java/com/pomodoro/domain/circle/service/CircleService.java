@@ -45,6 +45,7 @@ public interface CircleService {
      */
     public void updateCircleOne(int id,
         String circleName,
-        String description
+        String description,
+        Boolean isActive
     );
 }

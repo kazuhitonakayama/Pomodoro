@@ -23,6 +23,13 @@
             <textarea type="text" class="form-control" id="InputDescription" name="InputTitle"
                       th:field="*{description}"></textarea>
         </div>
+        <div class="mb-3">
+            <label for="SelectCircleStatus" class="form-label">活動状況</label>
+            <select class="form-control" id="SelectCircleStatus" name="SelectCircleStatus" th:field="*{isActive}">
+                <option th:value= "1" th:text="活動中！"></option>
+                <option th:value= "0" th:text="活動休止中..."></option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary" name="update">更新</button>
         <button type="submit" class="btn btn-primary" name="delete">削除</button>
     </form>

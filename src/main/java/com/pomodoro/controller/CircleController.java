@@ -85,7 +85,7 @@ public class CircleController {
     // 編集処理
     @PostMapping(value = "/edit", params = "update")
     public String updateCircle(EditCircleForm form, Model model) {
-        circleService.updateCircleOne(form.getId(), form.getCircleName(), form.getDescription());
+        circleService.updateCircleOne(form.getId(), form.getCircleName(), form.getDescription(),form.getIsActive());
         return "redirect:";
     }
 
