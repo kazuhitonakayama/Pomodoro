@@ -12,6 +12,9 @@
 
 <!-- 以下、各部活のトピックをBootstrapのcardで表示  -->
 <div class="container">
+    <div th:if="${#lists.isEmpty(inactiveCircleList)}">
+        <p th:text="まだ活動休止中のサークルはございません"></p>
+    </div>
     <div class="row row-cols-4">
         <div class="col col-md-3" th:each="item: ${inactiveCircleList}">
             <div class="card">
