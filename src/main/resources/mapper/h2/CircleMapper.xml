@@ -18,6 +18,11 @@
         where isActive = 1
     </select>
 
+    <select id="findInactive" resultType="MCircle">
+        select *
+        from circles where isActive = 0
+    </select>
+
     <select id="findCircleOne" resultType="MCircle">
         select *
         from circles

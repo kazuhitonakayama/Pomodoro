@@ -61,6 +61,15 @@ public class CircleController {
         return "circles/index";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
     }
 
+    @GetMapping("/inactive") //localhost:8080/circles/hiddenを指定
+    public String getInactiveCircleList(Model model) {
+
+        //circles/index.htmlに画面遷移
+        List<MCircle> inactiveCircleList = circleService.getInactiveCircles();
+        model.addAttribute("inactiveCircleList", inactiveCircleList);
+        return "circles/inactive";//src/main/resource/templatesからの相対パス（ファイル名のみ・拡張子省略）
+    }
+
     /**
      * 記事編集
      */

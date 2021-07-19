@@ -33,6 +33,14 @@ public class CircleServiceImpl implements CircleService {
     }
 
     /**
+     * 非表示サークル取得
+     */
+    @Override
+    public List<MCircle> getInactiveCircles() {
+        return mapper.findInactive();
+    }
+
+    /**
      * サークルの活動一覧取得
      */
     @Override
