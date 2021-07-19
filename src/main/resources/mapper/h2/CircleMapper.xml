@@ -15,6 +15,7 @@
     <select id="findMany" resultType="MCircle">
         select *
         from circles
+        where isActive = 1
     </select>
 
     <select id="findCircleOne" resultType="MCircle">
