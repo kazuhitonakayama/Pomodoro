@@ -27,9 +27,6 @@ public interface CircleMapper {
     /** サークルの名前の取得 @ サークル詳細ページ */
     public String findCircleName(int id);
 
-    /** サークル削除(1件) */
-    public int deleteOne(@Param("id") int id);
-
     /** サークル編集(1件) */
     public void updateOne(@Param("id") int id,
         @Param("circleName") String circleName,

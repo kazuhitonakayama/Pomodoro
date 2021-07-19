@@ -88,16 +88,7 @@ public class CircleController {
         circleService.updateCircleOne(form.getId(), form.getCircleName(), form.getDescription(),form.getIsActive());
         return "redirect:";
     }
-
-    /**
-     * サークル削除処理
-     */
-    @PostMapping(value = "/edit", params = "delete")
-    public String deleteCircle(EditCircleForm form, Model model) {
-        circleService.deleteCircleOne(form.getId());
-        return "redirect:";
-    }
-
+    
     /**
      * サークル詳細ページへの遷移
      */
