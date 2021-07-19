@@ -36,15 +36,11 @@ public interface CircleService {
     public MCircle getCircleOne(int id);
 
     /**
-     * サークル削除（1件）
-    */
-    public void deleteCircleOne(int id);
-
-    /**
      * 記事編集（1件）
      */
     public void updateCircleOne(int id,
         String circleName,
-        String description
+        String description,
+        Boolean isActive
     );
 }

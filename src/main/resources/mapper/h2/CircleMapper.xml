@@ -46,12 +46,8 @@
     <update id="updateOne">
         update circles
         set circleName  = #{circleName},
-            description = #{description}
+            description = #{description},
+            isActive = #{isActive}
         where id = #{id}
     </update>
-
-    <!-- サークル1件削除 -->
-    <delete id="deleteOne">
-        update circles set isActive = 0 where id = #{id}
-    </delete>
 </mapper>

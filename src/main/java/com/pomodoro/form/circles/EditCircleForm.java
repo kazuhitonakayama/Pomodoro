@@ -7,4 +7,5 @@ public class EditCircleForm {
     private int id;
     private String circleName;
     private String description;
+    private Boolean isActive;
 }
