@@ -36,8 +36,8 @@ public class CircleServiceImpl implements CircleService {
      * 非表示サークル取得
      */
     @Override
-    public List<MCircle> getHiddenCircles() {
-        return mapper.findHidden();
+    public List<MCircle> getInactiveCircles() {
+        return mapper.findInactive();
     }
 
     /**

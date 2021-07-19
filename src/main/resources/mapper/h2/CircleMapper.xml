@@ -15,11 +15,12 @@
     <select id="findMany" resultType="MCircle">
         select *
         from circles
+        where isActive = 1
     </select>
 
-    <select id="findHidden" resultType="MCircle">
+    <select id="findInactive" resultType="MCircle">
         select *
-        from circles where isActive = false
+        from circles where isActive = 0
     </select>
 
     <select id="findCircleOne" resultType="MCircle">
