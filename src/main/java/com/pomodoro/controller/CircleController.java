@@ -62,7 +62,7 @@ public class CircleController {
     }
 
     @GetMapping("/inactive") //localhost:8080/circles/hiddenを指定
-    public String getHiddenCircleList(Model model) {
+    public String getInactiveCircleList(Model model) {
 
         //circles/index.htmlに画面遷移
         List<MCircle> inactiveCircleList = circleService.getInactiveCircles();
