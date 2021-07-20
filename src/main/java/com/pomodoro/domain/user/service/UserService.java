@@ -8,4 +8,9 @@ public interface UserService {
      */
     public void registUser(MUser user);
 
+    /**
+     * ログインユーザー情報取得
+     */
+    public MUser getLoginUser(String userId);
+
 }

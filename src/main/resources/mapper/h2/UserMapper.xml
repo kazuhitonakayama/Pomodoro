@@ -32,4 +32,9 @@
                , #{gender}
                )
     </insert>
+
+    <!-- ログインユーザー情報取得-->
+    <select id="findLoginUser" resultType="MUser">
+        select * from users where userId = #{userId}
+    </select>
 </mapper>

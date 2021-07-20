@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
 
         mapper.insertOne(user);
     }
+
+    @Override
+    public MUser getLoginUser(String userId) {
+        return mapper.findLoginUser(userId);
+    }
 }

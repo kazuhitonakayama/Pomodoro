@@ -16,8 +16,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-//    @Autowired
-//    private UserDetailsService userDetailsService;
+   @Autowired
+   private UserDetailsService userDetailsService;
 
    @Bean
    public PasswordEncoder passwordEncoder(){
@@ -62,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginProcessingUrl("/login") //ログイン処理のパス
                     .loginPage("/login")//ログインページの指定
-                    .failureUrl("/login?error") //ログイン失敗字の遷移先
+                    .failureUrl("/login?error") //ログイン失敗時の遷移先
                     .usernameParameter("userId") //ログインページのユーザーID
                     .passwordParameter("password")//ログインページのパスワード
                     .defaultSuccessUrl("/", true);//成功時の遷移先
@@ -87,19 +87,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        PasswordEncoder encoder = passwordEncoder();
 
         //インメモリ認証
-        auth
-                .inMemoryAuthentication()
-                    .withUser("user")//userを追加
-                    .password(encoder.encode("user"))
-                    .roles("GENERAL")
-                    .and()
-                    .withUser("admin")//admin を追加
-                    .password(encoder.encode("admin"))
-                    .roles("ADMIN");
+        // auth
+        //         .inMemoryAuthentication()
+        //             .withUser("user")//userを追加
+        //             .password(encoder.encode("user"))
+        //             .roles("GENERAL")
+        //             .and()
+        //             .withUser("admin")//admin を追加
+        //             .password(encoder.encode("admin"))
+        //             .roles("ADMIN");
 
-//        //ユーザーデータ認証
-//        auth
-//                .userDetailsService(userDetailsService)
-//                .passwordEncoder(encoder);
+       //ユーザーデータ認証
+       auth
+               .userDetailsService(userDetailsService)
+               .passwordEncoder(encoder);
     }
 }
