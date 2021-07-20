@@ -57,15 +57,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                    .antMatchers("/admin").hasAnyAuthority("ROLE_ADMIN")//権限制御
                     .anyRequest().authenticated(); // それ以外は直リンクNG
 
-//        //ログイン処理
-//        http
-//                .formLogin()
-//                .loginProcessingUrl("/login") //ログイン処理のパス
-//                .loginPage("/login")//ログインページの指定
-//                .failureUrl("/login?error") //ログイン失敗字の遷移先
-//                .usernameParameter("userId") //ログインページのユーザーID
-//                .passwordParameter("password")//ログインページのパスワード
-//                .defaultSuccessUrl("/user/list", true);//成功時の遷移先
+        //ログイン処理
+        http
+                .formLogin()
+                    .loginProcessingUrl("/login") //ログイン処理のパス
+                    .loginPage("/login")//ログインページの指定
+                    .failureUrl("/login?error") //ログイン失敗字の遷移先
+                    .usernameParameter("userId") //ログインページのユーザーID
+                    .passwordParameter("password")//ログインページのパスワード
+                    .defaultSuccessUrl("/", true);//成功時の遷移先
 //
 //        //ログアウト処理
 //        http
@@ -78,28 +78,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
     }
 
-//    /**
-//     * 認証の設定
-//     */
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
+    /**
+     * 認証の設定
+     */
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
 //        PasswordEncoder encoder = passwordEncoder();
-//
-//        //インメモリ認証
-////        auth
-////                .inMemoryAuthentication()
-////                .withUser("user")//userを追加
-////                .password(encoder.encode("user"))
-////                .roles("GENERAL")
-////                .and()
-////                .withUser("admin")//admin を追加
-////                .password(encoder.encode("admin"))
-////                .roles("ADMIN");
-//
+
+        //インメモリ認証
+        auth
+                .inMemoryAuthentication()
+                    .withUser("user")//userを追加
+                    .password("user")
+                    .roles("GENERAL")
+                    .and()
+                    .withUser("admin")//admin を追加
+                    .password("admin")
+                    .roles("ADMIN");
+
 //        //ユーザーデータ認証
 //        auth
 //                .userDetailsService(userDetailsService)
 //                .passwordEncoder(encoder);
-//    }
+    }
 }

@@ -17,6 +17,7 @@ public class LoginController {
      */
     @PostMapping("/login")
     public String postLogin() {
+        //TODO: ログイン成功か失敗かわかるようにする
         return "redirect:/";
     }
 }
