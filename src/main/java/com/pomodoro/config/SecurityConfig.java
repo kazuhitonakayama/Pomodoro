@@ -19,10 +19,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    @Autowired
 //    private UserDetailsService userDetailsService;
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder(){
-//        return new BCryptPasswordEncoder();
-//    }
+   @Bean
+   public PasswordEncoder passwordEncoder(){
+       return new BCryptPasswordEncoder();
+   }
 
     /**
      * セキュリティの対象外を設定
@@ -84,17 +84,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-//        PasswordEncoder encoder = passwordEncoder();
+       PasswordEncoder encoder = passwordEncoder();
 
         //インメモリ認証
         auth
                 .inMemoryAuthentication()
                     .withUser("user")//userを追加
-                    .password("user")
+                    .password(encoder.encode("user"))
                     .roles("GENERAL")
                     .and()
                     .withUser("admin")//admin を追加
-                    .password("admin")
+                    .password(encoder.encode("admin"))
                     .roles("ADMIN");
 
 //        //ユーザーデータ認証
