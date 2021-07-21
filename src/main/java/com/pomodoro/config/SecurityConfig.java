@@ -73,9 +73,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                .logoutUrl("/logout")
                .logoutSuccessUrl("/");
-
-//         CSRF対策を無効に設定(一時的）
-        http.csrf().disable();
     }
 
     /**
@@ -85,17 +82,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
        PasswordEncoder encoder = passwordEncoder();
-
-        //インメモリ認証
-        // auth
-        //         .inMemoryAuthentication()
-        //             .withUser("user")//userを追加
-        //             .password(encoder.encode("user"))
-        //             .roles("GENERAL")
-        //             .and()
-        //             .withUser("admin")//admin を追加
-        //             .password(encoder.encode("admin"))
-        //             .roles("ADMIN");
 
        //ユーザーデータ認証
        auth
