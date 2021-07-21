@@ -12,4 +12,5 @@ public class MUser {
     private Date birthday;
     private Integer age;
     private Integer gender;
+    private String role;
 }

@@ -24,5 +24,6 @@ CREATE TABLE IF NOT EXISTS users (
     userName VARCHAR(50),
     birthday DATE,
     age INT,
-    gender INT
+    gender INT,
+    role VARCHAR(50)
     );

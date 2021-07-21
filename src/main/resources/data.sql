@@ -22,7 +22,8 @@ INSERT INTO users ( userId
                    , userName
                    , birthday
                    , age
-                   , gender)
-VALUES ('system@co.jp', 'password', 'システム管理者', '2000-01-01', 21, 1)
-     , ('user@co.jp', 'password', 'ユーザー1', '2000-01-01', 21, 2)
+                   , gender
+                   , role)
+VALUES ('system@co.jp', '$2a$10$rMzZvOQuxerl5lGg8goaROF8Wh1Eg0ANXZPCvFiJ0jAy2XGJWvbPS', 'システム管理者', '2000-01-01', 21, 1,'ROLE_ADMIN')
+     , ('user@co.jp', '$2a$10$rMzZvOQuxerl5lGg8goaROF8Wh1Eg0ANXZPCvFiJ0jAy2XGJWvbPS', 'ユーザー1', '2000-01-01', 21, 2,'ROLE_GENERAL')
 ;
