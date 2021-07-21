@@ -13,6 +13,7 @@
         <result column="birthday" property="birthday"/>
         <result column="age" property="age"/>
         <result column="gender" property="gender"/>
+        <result column="role" property="role"/>
     </resultMap>
 
     <!-- ユーザー1件登録 -->
@@ -23,6 +24,7 @@
                           , birthday
                           , age
                           , gender
+                          , role
                           )
         values ( #{userId}
                , #{password}
@@ -30,6 +32,7 @@
                , #{birthday}
                , #{age}
                , #{gender}
+               , #{role}
                )
     </insert>
 

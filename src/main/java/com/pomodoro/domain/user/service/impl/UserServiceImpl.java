@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     public void registUser(MUser user) {
         String rawPassword = user.getPassword();
         user.setPassword(encoder.encode(rawPassword));
-
+        user.setRole("ROLE_GENERAL");
         mapper.insertOne(user);
     }
 
