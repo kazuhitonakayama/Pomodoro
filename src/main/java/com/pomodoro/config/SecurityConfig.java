@@ -54,7 +54,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/user/signup").permitAll() //直リンクOK
                     .antMatchers("/").permitAll() //直リンクOK
                     .antMatchers("/circles").permitAll() //直リンクOK
-//                    .antMatchers("/circles/{spring:[0-9]+}").permitAll() //直リンクOK
                     .antMatchers("/circles/{circleId:\\d+}").permitAll() //直リンクOK
                     .antMatchers("/circles/inactive").permitAll() //直リンクOK
 //                    .antMatchers("/admin").hasAnyAuthority("ROLE_ADMIN")//権限制御
