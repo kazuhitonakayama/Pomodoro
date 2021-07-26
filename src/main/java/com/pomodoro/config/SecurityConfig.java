@@ -13,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import javax.validation.constraints.Pattern;
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -52,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/user/signup").permitAll() //直リンクOK
                     .antMatchers("/").permitAll() //直リンクOK
                     .antMatchers("/circles").permitAll() //直リンクOK
-                    .antMatchers("/circles/{\\d+}").permitAll() //直リンクOK
+                    .antMatchers("/circles/{circleId:\\d+}").permitAll() //直リンクOK
                     .antMatchers("/circles/inactive").permitAll() //直リンクOK
 //                    .antMatchers("/admin").hasAnyAuthority("ROLE_ADMIN")//権限制御
                     .anyRequest().authenticated(); // それ以外は直リンクNG
